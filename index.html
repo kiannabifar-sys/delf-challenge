@@ -40,6 +40,9 @@
   .brand-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent4));display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 0 24px rgba(0,229,255,0.4);}
   .topbar-meta{display:flex;gap:7px;flex-wrap:wrap;font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-weight:600;}
   .topbar-meta span{padding:5px 11px;border:1px solid var(--border);border-radius:20px;background:rgba(255,255,255,0.02);}
+  .topbar-btns{display:flex;gap:8px;}
+  .icon-btn{width:38px;height:38px;border-radius:10px;background:var(--card2);border:1px solid var(--border);color:var(--text);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s;}
+  .icon-btn:hover{border-color:var(--accent);transform:scale(1.05);}
 
   .hero{text-align:center;padding:14px 0 32px;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border:1px solid rgba(0,229,255,0.35);border-radius:100px;background:linear-gradient(135deg,rgba(0,229,255,0.1),rgba(124,58,237,0.1));font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:22px;animation:badgeGlow 3s ease-in-out infinite;}
@@ -63,6 +66,9 @@
   .level-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,var(--glowColor,rgba(0,229,255,0.15)),transparent 70%);opacity:0;transition:opacity 0.4s;pointer-events:none;}
   .level-card:hover::after{opacity:1;}
   .level-card:hover{transform:translateY(-10px);border-color:var(--glowBorder,rgba(0,229,255,0.5));box-shadow:0 24px 48px rgba(0,0,0,0.5),0 0 0 1px var(--glowBorder,rgba(0,229,255,0.3));}
+  .level-card.locked{opacity:0.5;cursor:not-allowed;filter:grayscale(0.7);}
+  .level-card.locked:hover{transform:none;box-shadow:none;border-color:var(--border);}
+  .level-card.locked::before{content:'🔒';position:absolute;top:12px;right:12px;font-size:18px;z-index:2;}
   .level-card[data-level="1"]{--glowColor:rgba(0,255,136,0.15);--glowBorder:rgba(0,255,136,0.5);}
   .level-card[data-level="2"]{--glowColor:rgba(0,229,255,0.15);--glowBorder:rgba(0,229,255,0.5);}
   .level-card[data-level="3"]{--glowColor:rgba(255,214,10,0.15);--glowBorder:rgba(255,214,10,0.5);}
@@ -183,6 +189,37 @@
   .sound-toggle{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--card2);border:1px solid var(--border);color:var(--text);font-size:20px;cursor:pointer;z-index:100;display:flex;align-items:center;justify-content:center;transition:all 0.3s;box-shadow:0 8px 24px rgba(0,0,0,0.4);}
   .sound-toggle:hover{transform:scale(1.1);border-color:var(--accent);}
 
+  /* Name modal */
+  .modal-overlay{position:fixed;inset:0;background:rgba(5,6,15,0.85);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;}
+  .modal-overlay.show{display:flex;animation:fadeIn 0.3s ease;}
+  .modal{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--border);border-radius:24px;padding:36px 28px;max-width:420px;width:100%;text-align:center;position:relative;overflow:hidden;}
+  .modal::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent4),var(--accent2));}
+  .modal h3{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:8px;}
+  .modal p{color:var(--muted);font-size:0.88rem;margin-bottom:22px;}
+  .modal input{width:100%;padding:15px 18px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:16px;outline:none;transition:all 0.3s;}
+  .modal input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,229,255,0.1);}
+  .modal .btn{width:100%;}
+
+  /* Leaderboard */
+  .leaderboard{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:20px;}
+  .leaderboard h4{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+  .lb-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.85rem;}
+  .lb-row:last-child{border-bottom:none;}
+  .lb-name{font-weight:600;color:var(--text);}
+  .lb-score{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--accent3);}
+  .lb-empty{color:var(--muted);font-size:0.8rem;text-align:center;padding:12px 0;font-style:italic;}
+
+  /* Certificate */
+  .cert{background:linear-gradient(160deg,rgba(15,19,48,0.98),rgba(5,6,15,0.98));border:2px solid var(--accent3);border-radius:20px;padding:36px 24px;margin:22px 0;text-align:center;position:relative;overflow:hidden;}
+  .cert::before{content:'';position:absolute;inset:8px;border:1px solid rgba(255,214,10,0.3);border-radius:14px;pointer-events:none;}
+  .cert-seal{font-size:2.5rem;margin-bottom:10px;}
+  .cert-title{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent3);margin-bottom:16px;}
+  .cert-name{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:6px;background:linear-gradient(135deg,#00e5ff,#ffd60a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .cert-level{font-size:0.9rem;color:var(--muted);margin-bottom:16px;}
+  .cert-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;max-width:400px;margin:0 auto 16px;}
+  .cert-date{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent3);}
+  .cert-download{margin-top:8px;}
+
   @media(max-width:900px){.levels{grid-template-columns:repeat(2,1fr);}.info-strip{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:600px){
     .wrap{padding:18px 14px 40px;}
@@ -215,46 +252,52 @@
 
 <div class="wrap">
 
+  <!-- WELCOME -->
   <div class="screen active" id="welcomeScreen">
     <div class="topbar">
       <div class="brand"><div class="brand-mark">🌐</div><span>DELF English Institute</span></div>
-      <div class="topbar-meta"><span>🌍 International Standard</span><span>📚 AEF Series</span><span>🎓 CEFR Aligned</span></div>
+      <div class="topbar-meta"><span>🌍 International</span><span>📚 AEF 1 & 2</span><span>🎓 CEFR</span></div>
+      <div class="topbar-btns">
+        <button class="icon-btn" onclick="toggleTheme()" title="Theme">🌙</button>
+        <button class="icon-btn" onclick="showLeaderboard()" title="Leaderboard">🏆</button>
+      </div>
     </div>
     <div class="hero">
       <div class="eyebrow">Official English Proficiency Challenge</div>
       <h1>English Challenge</h1>
-      <p class="hero-sub">A world-class English assessment designed for <strong>DELF students</strong>. Choose your level, face <strong>10 challenging questions</strong> from the American English File series, and discover your true command of the English language.</p>
+      <p class="hero-sub">A world-class English assessment for <strong>DELF students</strong>. Level up, answer <strong>10 questions per level</strong>, unlock the next level, and earn your certificate.</p>
       <div class="hero-tags">
-        <div class="chip">📘 American English File 1 & 2</div>
-        <div class="chip">⏱️ 15s per question</div>
+        <div class="chip">📘 AEF 1 & 2</div>
+        <div class="chip">🔓 Level progression</div>
         <div class="chip">🔥 Streak bonus</div>
-        <div class="chip">💡 Detailed explanations</div>
+        <div class="chip">🏅 Certificate</div>
       </div>
     </div>
-    <div class="section-head"><h2>Select Your Proficiency Level</h2><p>Each level contains 10 carefully crafted questions — no easy ones</p></div>
-    <div class="levels">
-      <div class="level-card" data-level="1" onclick="startQuiz(1)">
+    <div class="section-head"><h2>Select Your Level</h2><p>Unlock levels by scoring 60%+ on the previous one</p></div>
+    <div class="levels" id="levelsGrid">
+      <div class="level-card" data-level="1" onclick="pickLevel(1)">
         <div class="level-badge">Foundation</div><div class="level-num">01</div><div class="level-name">Beginner+</div><div class="level-cefr">CEFR A1–A2</div><div class="level-desc">AEF 1 — Units 1–8<br>Grammar & Vocabulary Essentials</div><div class="level-stars">★☆☆☆</div>
       </div>
-      <div class="level-card" data-level="2" onclick="startQuiz(2)">
+      <div class="level-card" data-level="2" onclick="pickLevel(2)">
         <div class="level-badge">Core</div><div class="level-num">02</div><div class="level-name">Intermediate</div><div class="level-cefr">CEFR B1</div><div class="level-desc">AEF 1 & 2 — Mixed<br>Tenses & Sentence Structures</div><div class="level-stars">★★☆☆</div>
       </div>
-      <div class="level-card" data-level="3" onclick="startQuiz(3)">
+      <div class="level-card" data-level="3" onclick="pickLevel(3)">
         <div class="level-badge">Advanced</div><div class="level-num">03</div><div class="level-name">Upper-Int.</div><div class="level-cefr">CEFR B2</div><div class="level-desc">AEF 2 — Units 1–8<br>Perfect Tenses & Complex Grammar</div><div class="level-stars">★★★☆</div>
       </div>
-      <div class="level-card" data-level="4" onclick="startQuiz(4)">
+      <div class="level-card" data-level="4" onclick="pickLevel(4)">
         <div class="level-badge">Mastery</div><div class="level-num">04</div><div class="level-name">Expert</div><div class="level-cefr">CEFR C1</div><div class="level-desc">AEF 2 — Mastery<br>Inversion & Advanced Structures</div><div class="level-stars">★★★★</div>
       </div>
     </div>
     <div class="info-strip">
-      <div class="info-item"><div class="num">40</div><div class="lbl">Total Questions</div></div>
-      <div class="info-item"><div class="num">15s</div><div class="lbl">Per Question</div></div>
+      <div class="info-item"><div class="num">40</div><div class="lbl">Questions</div></div>
+      <div class="info-item"><div class="num">15s</div><div class="lbl">Per Q</div></div>
       <div class="info-item"><div class="num">4</div><div class="lbl">Levels</div></div>
-      <div class="info-item"><div class="num">🔥</div><div class="lbl">Streak Bonus</div></div>
+      <div class="info-item"><div class="num">🏅</div><div class="lbl">Certificate</div></div>
     </div>
     <div class="footer">DELF • English Department • American English File Series</div>
   </div>
 
+  <!-- QUIZ -->
   <div class="screen" id="quizScreen">
     <div class="quiz-topbar">
       <div class="quiz-level" id="levelBadge">LEVEL 1</div>
@@ -276,6 +319,7 @@
     <div class="footer">DELF • English Department • American English File Series</div>
   </div>
 
+  <!-- RESULT -->
   <div class="screen" id="resultScreen">
     <div class="result-card">
       <div class="result-emoji" id="resultEmoji">🎉</div>
@@ -296,9 +340,11 @@
         <div class="stat-box s"><div class="stat-val" id="statStreak">0</div><div class="stat-lbl">Best Streak</div></div>
       </div>
       <div class="result-msg" id="resultMessage"></div>
+      <div id="certArea"></div>
       <div class="actions">
         <button class="btn btn-primary" onclick="restartQuiz()">🔄 Try Again</button>
         <button class="btn btn-ghost" onclick="goHome()">🏠 Change Level</button>
+        <button class="btn btn-ghost" onclick="shareResult()">📤 Share</button>
       </div>
     </div>
     <div class="footer">DELF • English Department • American English File Series</div>
@@ -306,20 +352,42 @@
 
 </div>
 
+<!-- NAME MODAL -->
+<div class="modal-overlay" id="nameModal">
+  <div class="modal">
+    <h3>👋 Welcome to DELF Challenge</h3>
+    <p>Enter your name to save your progress and appear on the leaderboard.</p>
+    <input type="text" id="nameInput" placeholder="Your full name" maxlength="30" autocomplete="off">
+    <button class="btn btn-primary" onclick="saveName()">Start Challenge →</button>
+  </div>
+</div>
+
+<!-- LEADERBOARD MODAL -->
+<div class="modal-overlay" id="lbModal">
+  <div class="modal" style="max-width:480px;">
+    <h3>🏆 Leaderboard</h3>
+    <p>Top scores across all DELF students</p>
+    <div id="lbContent"></div>
+    <button class="btn btn-ghost" onclick="closeLeaderboard()" style="margin-top:16px;">Close</button>
+  </div>
+</div>
+
 <script>
 let soundEnabled = true;
 let audioCtx = null;
+let currentLevel=1,currentQIndex=0,score=0,timerInterval=null,timeLeft=15,answered=false,correctCount=0,wrongCount=0,currentStreak=0,bestStreak=0;
+const TOTAL_TIME=15;
+let playerName = localStorage.getItem('delf_name') || '';
 
-function initAudio(){ if(!audioCtx){ try{ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } }
+function initAudio(){ if(!audioCtx){ try{ audioCtx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } }
 function playTone(freq,duration,type='sine',vol=0.15){
   if(!soundEnabled||!audioCtx) return;
   try{
-    const osc=audioCtx.createOscillator(); const gain=audioCtx.createGain();
-    osc.type=type; osc.frequency.value=freq;
-    gain.gain.setValueAtTime(vol,audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+duration);
-    osc.connect(gain); gain.connect(audioCtx.destination);
-    osc.start(); osc.stop(audioCtx.currentTime+duration);
+    const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+    o.type=type; o.frequency.value=freq;
+    g.gain.setValueAtTime(vol,audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+duration);
+    o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime+duration);
   }catch(e){}
 }
 function soundCorrect(){ initAudio(); playTone(660,0.1,'sine',0.12); setTimeout(()=>playTone(880,0.15,'sine',0.12),90); setTimeout(()=>playTone(1100,0.2,'sine',0.12),180); }
@@ -329,59 +397,108 @@ function soundTimeUp(){ initAudio(); playTone(400,0.2,'square',0.1); setTimeout(
 function soundWin(){ initAudio(); [523,659,784,1047].forEach((f,i)=>setTimeout(()=>playTone(f,0.25,'sine',0.15),i*120)); }
 function toggleSound(){ soundEnabled=!soundEnabled; document.getElementById('soundToggle').textContent=soundEnabled?'🔊':'🔇'; if(soundEnabled){initAudio();playTone(800,0.1,'sine',0.1);} }
 
+// THEME
+let darkMode = localStorage.getItem('delf_theme') !== 'light';
+function toggleTheme(){
+  darkMode = !darkMode;
+  document.documentElement.style.setProperty('--bg', darkMode?'#05060f':'#f0f2f8');
+  document.documentElement.style.setProperty('--bg2', darkMode?'#0a0d1f':'#e8ebf5');
+  document.documentElement.style.setProperty('--card', darkMode?'#0f1330':'#ffffff');
+  document.documentElement.style.setProperty('--card2', darkMode?'#161c40':'#f5f7fd');
+  document.documentElement.style.setProperty('--text', darkMode?'#eef2ff':'#1a1f3a');
+  document.documentElement.style.setProperty('--muted', darkMode?'#8892b0':'#5a6480');
+  document.documentElement.style.setProperty('--border', darkMode?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.1)');
+  localStorage.setItem('delf_theme', darkMode?'dark':'light');
+  document.querySelector('.icon-btn[onclick="toggleTheme()"]').textContent = darkMode?'🌙':'☀️';
+}
+
 const QUESTIONS = {
   1:[
-    {tag:"PRESENT SIMPLE",q:"She usually ______ coffee in the morning, but today she ______ tea.",options:["drinks / is drinking","is drinking / drinks","drinks / drinks","is drinking / is drinking"],correct:0,exp:"Present Simple for habits (<strong>usually drinks</strong>), Present Continuous for temporary actions (<strong>is drinking</strong> today). AEF 1, Unit 3 & 4."},
-    {tag:"QUANTIFIERS",q:"There isn't ______ milk in the fridge, but there are ______ apples on the table.",options:["some / any","any / some","any / any","some / some"],correct:1,exp:"Negative sentences use <strong>any</strong>; affirmative plural uses <strong>some</strong>. AEF 1, Unit 4."},
-    {tag:"SUPERLATIVE",q:"This is ______ book I have ever read. I couldn't put it down!",options:["the better","the best","best","better"],correct:1,exp:"Present Perfect + <em>ever</em> requires superlative: <strong>the best</strong>. AEF 1, Unit 6 & 8."},
-    {tag:"PAST SIMPLE",q:"Where ______ you ______ last summer? I didn't see you for two months!",options:["did / go","were / going","did / went","have / gone"],correct:0,exp:"Past Simple question: <strong>did + you + go</strong> (base form). AEF 1, Unit 7."},
-    {tag:"VOCABULARY",q:"He's very ______ . He always makes people laugh at parties.",options:["boring","funny","serious","quiet"],correct:1,exp:"A person who makes others laugh is <strong>funny</strong>. AEF 1, Unit 5 — describing personality."},
-    {tag:"ARTICLES",q:"My brother is ______ engineer, and he works in ______ old building near the river.",options:["a / an","an / an","an / a","a / a"],correct:1,exp:"<strong>An</strong> engineer (vowel sound), <strong>an</strong> old building (vowel sound). AEF 1, Unit 2."},
-    {tag:"PAST SIMPLE",q:"I ______ my keys yesterday, but I ______ them this morning under the sofa.",options:["lost / found","lose / find","lost / find","have lost / found"],correct:0,exp:"Both actions are finished in the past: <strong>lost</strong> and <strong>found</strong>. AEF 1, Unit 7."},
-    {tag:"COMPARATIVES",q:"She's ______ than her sister, but her sister is ______ in the family.",options:["taller / the tallest","tall / taller","taller / taller","the tallest / tall"],correct:0,exp:"Comparative (<strong>taller than</strong>) + superlative (<strong>the tallest</strong>). AEF 1, Unit 6."},
-    {tag:"COUNTABLE/UNCOUNTABLE",q:"How ______ sugar do you take in your tea? — Just ______ , please.",options:["many / a few","much / a little","much / many","many / a little"],correct:1,exp:"Sugar is uncountable → <strong>how much</strong>; <strong>a little</strong>. AEF 1, Unit 4."},
-    {tag:"PRESENT SIMPLE",q:"They ______ to the cinema every Friday, but last week they ______ to a restaurant instead.",options:["go / went","went / go","go / go","are going / went"],correct:0,exp:"Habit → Present Simple (<strong>go</strong>); finished past event (<strong>went</strong>). AEF 1, Units 3 & 7."}
+    {tag:"PRESENT SIMPLE",q:"She usually ______ coffee in the morning, but today she ______ tea.",options:["drinks / is drinking","is drinking / drinks","drinks / drinks","is drinking / is drinking"],correct:0,exp:"Present Simple for habits, Present Continuous for temporary actions. AEF 1, U3-4."},
+    {tag:"QUANTIFIERS",q:"There isn't ______ milk in the fridge, but there are ______ apples on the table.",options:["some / any","any / some","any / any","some / some"],correct:1,exp:"Negative → any; affirmative plural → some. AEF 1, U4."},
+    {tag:"SUPERLATIVE",q:"This is ______ book I have ever read. I couldn't put it down!",options:["the better","the best","best","better"],correct:1,exp:"Present Perfect + ever requires superlative: the best. AEF 1, U6-8."},
+    {tag:"PAST SIMPLE",q:"Where ______ you ______ last summer? I didn't see you for two months!",options:["did / go","were / going","did / went","have / gone"],correct:0,exp:"Past Simple question: did + you + go (base form). AEF 1, U7."},
+    {tag:"VOCABULARY",q:"He's very ______ . He always makes people laugh at parties.",options:["boring","funny","serious","quiet"],correct:1,exp:"A person who makes others laugh is funny. AEF 1, U5."},
+    {tag:"ARTICLES",q:"My brother is ______ engineer, and he works in ______ old building near the river.",options:["a / an","an / an","an / a","a / a"],correct:1,exp:"An engineer (vowel), an old building (vowel). AEF 1, U2."},
+    {tag:"PAST SIMPLE",q:"I ______ my keys yesterday, but I ______ them this morning under the sofa.",options:["lost / found","lose / find","lost / find","have lost / found"],correct:0,exp:"Both actions finished in the past: lost, found. AEF 1, U7."},
+    {tag:"COMPARATIVES",q:"She's ______ than her sister, but her sister is ______ in the family.",options:["taller / the tallest","tall / taller","taller / taller","the tallest / tall"],correct:0,exp:"Comparative taller than + superlative the tallest. AEF 1, U6."},
+    {tag:"COUNTABLE/UNCOUNTABLE",q:"How ______ sugar do you take in your tea? — Just ______ , please.",options:["many / a few","much / a little","much / many","many / a little"],correct:1,exp:"Sugar uncountable → how much; a little. AEF 1, U4."},
+    {tag:"PRESENT SIMPLE",q:"They ______ to the cinema every Friday, but last week they ______ to a restaurant instead.",options:["go / went","went / go","go / go","are going / went"],correct:0,exp:"Habit → Present Simple; past event → Past Simple. AEF 1, U3-7."}
   ],
   2:[
-    {tag:"PAST CONTINUOUS",q:"While I ______ dinner, the phone ______ .",options:["cooked / rang","was cooking / rang","cooked / was ringing","was cooking / was ringing"],correct:1,exp:"Past Continuous for background action (<strong>was cooking</strong>), Past Simple for interruption (<strong>rang</strong>). AEF 2, Unit 2."},
-    {tag:"PAST CONTINUOUS",q:"Although it ______ heavily, they ______ to continue the hike.",options:["rained / decided","was raining / decided","rained / were deciding","was raining / were deciding"],correct:1,exp:"Past Continuous for ongoing weather (<strong>was raining</strong>), Past Simple for the decision (<strong>decided</strong>). AEF 2, Unit 2."},
-    {tag:"FUTURE POSSIBILITY",q:"I'm not sure yet, but I think I ______ visit my grandparents this weekend.",options:["will","am going to","might","must"],correct:2,exp:"<strong>Might</strong> expresses uncertain future possibility. AEF 2, Unit 3."},
-    {tag:"PRESENT PERFECT",q:"This is the most interesting film I ______ ever ______ .",options:["have / seen","had / seen","have / saw","did / see"],correct:0,exp:"Superlative + Present Perfect: <strong>the most interesting film I have ever seen</strong>. AEF 2, Unit 4."},
-    {tag:"REPORTED SPEECH",q:"She asked me where I ______ from, and I told her I ______ from Tehran.",options:["come / come","came / come","come / came","came / came"],correct:1,exp:"Reported speech backshift (<strong>came</strong>), but facts can stay present (<strong>come</strong>). AEF 2, Unit 8."},
-    {tag:"MODALS",q:"You ______ smoke here. It's a hospital.",options:["mustn't","don't have to","shouldn't","couldn't"],correct:0,exp:"<strong>Mustn't</strong> = prohibition. 'Don't have to' = no obligation. AEF 2, Unit 5."},
-    {tag:"PAST CONTINUOUS",q:"I ______ my homework when my friend ______ .",options:["did / called","was doing / called","did / was calling","was doing / was calling"],correct:1,exp:"Longer action (<strong>was doing</strong>) + interruption (<strong>called</strong>). AEF 2, Unit 2."},
-    {tag:"PRESENT PERFECT",q:"He's been learning English ______ three years, and he ______ already ______ three books.",options:["since / has / read","for / has / read","for / have / read","since / have / read"],correct:1,exp:"<strong>For</strong> + duration; <strong>has already read</strong>. AEF 2, Unit 4."},
-    {tag:"FIRST CONDITIONAL",q:"If it ______ tomorrow, we ______ at home and watch a movie.",options:["rains / will stay","will rain / stay","rains / stay","will rain / will stay"],correct:0,exp:"First conditional: <strong>If + Present Simple, will + base verb</strong>. AEF 2, Unit 7."},
-    {tag:"PASSIVE",q:"The book ______ by a famous author, and it ______ into 20 languages.",options:["was written / translated","wrote / was translated","was written / was translated","wrote / translated"],correct:2,exp:"Both passive: <strong>was written</strong> and <strong>was translated</strong>. AEF 2, Unit 6."}
+    {tag:"PAST CONTINUOUS",q:"While I ______ dinner, the phone ______ .",options:["cooked / rang","was cooking / rang","cooked / was ringing","was cooking / was ringing"],correct:1,exp:"Past Continuous for background action, Past Simple for interruption. AEF 2, U2."},
+    {tag:"PAST CONTINUOUS",q:"Although it ______ heavily, they ______ to continue the hike.",options:["rained / decided","was raining / decided","rained / were deciding","was raining / were deciding"],correct:1,exp:"Past Continuous ongoing weather + Past Simple decision. AEF 2, U2."},
+    {tag:"FUTURE POSSIBILITY",q:"I'm not sure yet, but I think I ______ visit my grandparents this weekend.",options:["will","am going to","might","must"],correct:2,exp:"Might = uncertain future possibility. AEF 2, U3."},
+    {tag:"PRESENT PERFECT",q:"This is the most interesting film I ______ ever ______ .",options:["have / seen","had / seen","have / saw","did / see"],correct:0,exp:"Superlative + Present Perfect: have ever seen. AEF 2, U4."},
+    {tag:"REPORTED SPEECH",q:"She asked me where I ______ from, and I told her I ______ from Tehran.",options:["come / come","came / come","come / came","came / came"],correct:1,exp:"Reported speech backshift came; fact can stay present come. AEF 2, U8."},
+    {tag:"MODALS",q:"You ______ smoke here. It's a hospital.",options:["mustn't","don't have to","shouldn't","couldn't"],correct:0,exp:"Mustn't = prohibition. AEF 2, U5."},
+    {tag:"PAST CONTINUOUS",q:"I ______ my homework when my friend ______ .",options:["did / called","was doing / called","did / was calling","was doing / was calling"],correct:1,exp:"Longer action was doing + interruption called. AEF 2, U2."},
+    {tag:"PRESENT PERFECT",q:"He's been learning English ______ three years, and he ______ already ______ three books.",options:["since / has / read","for / has / read","for / have / read","since / have / read"],correct:1,exp:"For + duration; has already read. AEF 2, U4."},
+    {tag:"FIRST CONDITIONAL",q:"If it ______ tomorrow, we ______ at home and watch a movie.",options:["rains / will stay","will rain / stay","rains / stay","will rain / will stay"],correct:0,exp:"First conditional: If + Present Simple, will + base verb. AEF 2, U7."},
+    {tag:"PASSIVE",q:"The book ______ by a famous author, and it ______ into 20 languages.",options:["was written / translated","wrote / was translated","was written / was translated","wrote / translated"],correct:2,exp:"Both passive: was written and was translated. AEF 2, U6."}
   ],
   3:[
-    {tag:"PAST PERFECT",q:"By the time we arrived at the station, the train ______ , so we ______ wait for two hours.",options:["already left / had to","had already left / had to","already left / must","has already left / had to"],correct:1,exp:"Past Perfect (<strong>had already left</strong>) for earlier action; <strong>had to</strong> for past obligation. AEF 2, Unit 4."},
-    {tag:"RELATIVE CLAUSES",q:"She's the kind of person ______ always helps others, ______ makes her very popular.",options:["who / which","which / who","who / that","that / which"],correct:0,exp:"<strong>Who</strong> for people; <strong>which</strong> for whole clause. AEF 2, Unit 8."},
-    {tag:"WISH",q:"I wish I ______ more time to study yesterday. I ______ the exam now.",options:["had / would pass","had had / might pass","have / will pass","had / might pass"],correct:1,exp:"Past wish: <strong>I wish I had had</strong>; <strong>might pass</strong>. AEF 2, Unit 9."},
-    {tag:"DOUBLE COMPARATIVE",q:"The more you practice, ______ you become at speaking English.",options:["the better","better","the best","the more better"],correct:0,exp:"<strong>The more..., the better...</strong> 'The more better' is wrong. AEF 2, Unit 5."},
-    {tag:"VERB PATTERNS",q:"He denied ______ the window, but the teacher saw him ______ it.",options:["breaking / break","to break / breaking","breaking / to break","to break / break"],correct:0,exp:"<strong>Deny + -ing</strong>; <strong>see + object + base verb</strong>. AEF 2, Unit 7."},
-    {tag:"CONCESSION",q:"______ hard she tried, she couldn't solve the problem.",options:["However","Whatever","No matter how","Although"],correct:2,exp:"<strong>No matter how</strong> + adj + subj + verb. AEF 2, Unit 8."},
-    {tag:"PASSIVE",q:"The report ______ by the manager before the meeting started.",options:["had been checked","was checked","has been checked","had checked"],correct:0,exp:"Past Perfect Passive: <strong>had been checked</strong>. AEF 2, Unit 6."},
-    {tag:"VERB PATTERNS",q:"She suggested ______ a taxi instead of ______ the bus.",options:["taking / taking","to take / taking","taking / to take","to take / to take"],correct:0,exp:"<strong>Suggest + -ing</strong>; <strong>instead of + -ing</strong>. AEF 2, Unit 7."},
-    {tag:"SUBJUNCTIVE",q:"It's high time we ______ something about this problem.",options:["do","did","have done","will do"],correct:1,exp:"<strong>It's high time + Past Simple</strong>. AEF 2, Unit 9."},
-    {tag:"INVERSION",q:"Not only ______ the exam, but she also got the highest score.",options:["she passed","did she pass","she did pass","passed she"],correct:1,exp:"After <strong>Not only</strong>, invert: <strong>did she pass</strong>. AEF 2, Unit 10."}
+    {tag:"PAST PERFECT",q:"By the time we arrived at the station, the train ______ , so we ______ wait for two hours.",options:["already left / had to","had already left / had to","already left / must","has already left / had to"],correct:1,exp:"Past Perfect had already left; had to for past obligation. AEF 2, U4."},
+    {tag:"RELATIVE CLAUSES",q:"She's the kind of person ______ always helps others, ______ makes her very popular.",options:["who / which","which / who","who / that","that / which"],correct:0,exp:"Who for people; which for whole clause. AEF 2, U8."},
+    {tag:"WISH",q:"I wish I ______ more time to study yesterday. I ______ the exam now.",options:["had / would pass","had had / might pass","have / will pass","had / might pass"],correct:1,exp:"I wish I had had; might pass. AEF 2, U9."},
+    {tag:"DOUBLE COMPARATIVE",q:"The more you practice, ______ you become at speaking English.",options:["the better","better","the best","the more better"],correct:0,exp:"The more..., the better... AEF 2, U5."},
+    {tag:"VERB PATTERNS",q:"He denied ______ the window, but the teacher saw him ______ it.",options:["breaking / break","to break / breaking","breaking / to break","to break / break"],correct:0,exp:"Deny + -ing; see + object + base verb. AEF 2, U7."},
+    {tag:"CONCESSION",q:"______ hard she tried, she couldn't solve the problem.",options:["However","Whatever","No matter how","Although"],correct:2,exp:"No matter how + adj + subj + verb. AEF 2, U8."},
+    {tag:"PASSIVE",q:"The report ______ by the manager before the meeting started.",options:["had been checked","was checked","has been checked","had checked"],correct:0,exp:"Past Perfect Passive: had been checked. AEF 2, U6."},
+    {tag:"VERB PATTERNS",q:"She suggested ______ a taxi instead of ______ the bus.",options:["taking / taking","to take / taking","taking / to take","to take / to take"],correct:0,exp:"Suggest + -ing; instead of + -ing. AEF 2, U7."},
+    {tag:"SUBJUNCTIVE",q:"It's high time we ______ something about this problem.",options:["do","did","have done","will do"],correct:1,exp:"It's high time + Past Simple. AEF 2, U9."},
+    {tag:"INVERSION",q:"Not only ______ the exam, but she also got the highest score.",options:["she passed","did she pass","she did pass","passed she"],correct:1,exp:"After Not only, invert: did she pass. AEF 2, U10."}
   ],
   4:[
-    {tag:"MIXED CONDITIONAL",q:"Had I known about the traffic, I ______ earlier. I ______ the meeting now if I had.",options:["would leave / would attend","would have left / would be attending","left / attended","would have left / attended"],correct:1,exp:"Third conditional inverted: <strong>Had I known..., I would have left</strong>; mixed: <strong>would be attending</strong>. AEF 2, Units 7 & 9."},
-    {tag:"RELATIVE CLAUSES",q:"The proposal, ______ was submitted last week, ______ by the committee tomorrow.",options:["that / will be reviewed","which / will review","which / will be reviewed","that / will review"],correct:2,exp:"Non-defining: <strong>which</strong>; passive future: <strong>will be reviewed</strong>. AEF 2, Units 6 & 8."},
-    {tag:"USED TO",q:"She's used to ______ up early, so she doesn't mind ______ the 6 a.m. shift.",options:["get / take","getting / taking","get / taking","getting / take"],correct:1,exp:"<strong>Be used to + -ing</strong>; <strong>mind + -ing</strong>. AEF 2, Unit 7."},
-    {tag:"CONCESSION",q:"______ the heavy rain, the match continued, ______ surprised everyone.",options:["Despite / which","Although / that","Despite / that","Although / which"],correct:0,exp:"<strong>Despite + noun</strong>; <strong>which</strong> for the whole clause. AEF 2, Unit 8."},
-    {tag:"PREFERENCES",q:"I'd rather you ______ tell anyone about this. It ______ between us.",options:["don't / stays","didn't / stayed","won't / will stay","didn't / stays"],correct:1,exp:"<strong>I'd rather + Past Simple</strong>; <strong>stays</strong>. AEF 2, Unit 9."},
-    {tag:"DOUBLE COMPARATIVE",q:"The more carefully you read the instructions, ______ mistakes you will make.",options:["the fewer","the less","fewer","the few"],correct:0,exp:"<strong>The fewer + plural noun</strong>. AEF 2, Unit 5."},
-    {tag:"VERB PATTERNS",q:"He admitted ______ the money, but he refused ______ where he ______ it.",options:["taking / to say / had hidden","to take / saying / hid","taking / saying / had hidden","to take / to say / hid"],correct:0,exp:"<strong>Admit + -ing</strong>; <strong>refuse + to-inf</strong>; <strong>Past Perfect</strong>. AEF 2, Units 4 & 7."},
-    {tag:"INVERSION",q:"Only after ______ the results ______ how serious the problem was.",options:["seeing / did we realize","we saw / we realized","seeing / we realized","we saw / did we realize"],correct:0,exp:"Inversion after <strong>Only after</strong>: <strong>did we realize</strong>. AEF 2, Unit 10."},
-    {tag:"VERB PATTERNS",q:"It's not worth ______ about it now. You ______ have told me earlier.",options:["worrying / should","to worry / should","worrying / must","to worry / must"],correct:0,exp:"<strong>Worth + -ing</strong>; <strong>should have + past participle</strong>. AEF 2, Unit 9."},
-    {tag:"INVERSION",q:"______ had she finished speaking ______ the audience started clapping.",options:["No sooner / than","Hardly / when","Scarcely / than","No sooner / when"],correct:0,exp:"<strong>No sooner ... than</strong>. AEF 2, Unit 10."}
+    {tag:"MIXED CONDITIONAL",q:"Had I known about the traffic, I ______ earlier. I ______ the meeting now if I had.",options:["would leave / would attend","would have left / would be attending","left / attended","would have left / attended"],correct:1,exp:"Third conditional inverted + mixed conditional. AEF 2, U7-9."},
+    {tag:"RELATIVE CLAUSES",q:"The proposal, ______ was submitted last week, ______ by the committee tomorrow.",options:["that / will be reviewed","which / will review","which / will be reviewed","that / will review"],correct:2,exp:"Non-defining which; passive future will be reviewed. AEF 2, U6-8."},
+    {tag:"USED TO",q:"She's used to ______ up early, so she doesn't mind ______ the 6 a.m. shift.",options:["get / take","getting / taking","get / taking","getting / take"],correct:1,exp:"Be used to + -ing; mind + -ing. AEF 2, U7."},
+    {tag:"CONCESSION",q:"______ the heavy rain, the match continued, ______ surprised everyone.",options:["Despite / which","Although / that","Despite / that","Although / which"],correct:0,exp:"Despite + noun; which for whole clause. AEF 2, U8."},
+    {tag:"PREFERENCES",q:"I'd rather you ______ tell anyone about this. It ______ between us.",options:["don't / stays","didn't / stayed","won't / will stay","didn't / stays"],correct:1,exp:"I'd rather + Past Simple; stays. AEF 2, U9."},
+    {tag:"DOUBLE COMPARATIVE",q:"The more carefully you read the instructions, ______ mistakes you will make.",options:["the fewer","the less","fewer","the few"],correct:0,exp:"The fewer + plural noun. AEF 2, U5."},
+    {tag:"VERB PATTERNS",q:"He admitted ______ the money, but he refused ______ where he ______ it.",options:["taking / to say / had hidden","to take / saying / hid","taking / saying / had hidden","to take / to say / hid"],correct:0,exp:"Admit + -ing; refuse + to-inf; Past Perfect. AEF 2, U4-7."},
+    {tag:"INVERSION",q:"Only after ______ the results ______ how serious the problem was.",options:["seeing / did we realize","we saw / we realized","seeing / we realized","we saw / did we realize"],correct:0,exp:"Inversion after Only after: did we realize. AEF 2, U10."},
+    {tag:"VERB PATTERNS",q:"It's not worth ______ about it now. You ______ have told me earlier.",options:["worrying / should","to worry / should","worrying / must","to worry / must"],correct:0,exp:"Worth + -ing; should have + past participle. AEF 2, U9."},
+    {tag:"INVERSION",q:"______ had she finished speaking ______ the audience started clapping.",options:["No sooner / than","Hardly / when","Scarcely / than","No sooner / when"],correct:0,exp:"No sooner ... than. AEF 2, U10."}
   ]
 };
 
-let currentLevel=1,currentQIndex=0,score=0,timerInterval=null,timeLeft=15,answered=false,correctCount=0,wrongCount=0,currentStreak=0,bestStreak=0;
-const TOTAL_TIME=15;
+// Unlock system: level N unlocked if level N-1 score >= 60%
+function isLevelUnlocked(level){
+  if(level === 1) return true;
+  const prev = parseInt(localStorage.getItem('delf_level_' + (level-1) + '_score') || '0');
+  return prev >= 6;
+}
+
+function updateLevelLocks(){
+  document.querySelectorAll('.level-card').forEach(card=>{
+    const lvl = parseInt(card.dataset.level);
+    card.classList.toggle('locked', !isLevelUnlocked(lvl));
+  });
+}
+
+function pickLevel(level){
+  if(!isLevelUnlocked(level)){ soundWrong(); return; }
+  if(!playerName){ showNameModal(level); return; }
+  startQuiz(level);
+}
+
+function showNameModal(level){
+  window._pendingLevel = level;
+  document.getElementById('nameModal').classList.add('show');
+  setTimeout(()=>document.getElementById('nameInput').focus(), 100);
+}
+
+function saveName(){
+  const v = document.getElementById('nameInput').value.trim();
+  if(!v){ document.getElementById('nameInput').style.borderColor = 'var(--red)'; return; }
+  playerName = v;
+  localStorage.setItem('delf_name', v);
+  document.getElementById('nameModal').classList.remove('show');
+  if(window._pendingLevel){ startQuiz(window._pendingLevel); window._pendingLevel = null; }
+}
+
+document.getElementById('nameInput').addEventListener('keydown', e=>{ if(e.key==='Enter') saveName(); });
 
 function showScreen(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
 
@@ -460,12 +577,18 @@ function showResults(){
   document.getElementById('statPercent').textContent=percent+'%';
   document.getElementById('statStreak').textContent=bestStreak;
   setTimeout(()=>{ document.getElementById('scoreFill').style.strokeDashoffset=534-(534*score/total); },120);
+  
+  // Save score & leaderboard
+  localStorage.setItem('delf_level_'+currentLevel+'_score', score);
+  saveToLeaderboard();
+  updateLevelLocks();
+  
   const messages={
-    perfect:{emoji:'👑',title:'PERFECT SCORE!',subtitle:'Absolute mastery achieved',msg:'Flawless performance! You have complete command of this level. Your teacher should be genuinely impressed. 🏆'},
-    excellent:{emoji:'🎉',title:'EXCELLENT!',subtitle:'Outstanding performance',msg:'Incredible work! You clearly understand the material very well. Keep up this amazing level of English!'},
-    good:{emoji:'👍',title:'GOOD JOB!',subtitle:'Solid performance',msg:'Well done! You have a good grasp of the material. Review the questions you missed and try again to reach perfection.'},
-    average:{emoji:'📚',title:'KEEP GOING!',subtitle:'Room for improvement',msg:'You have a foundation, but there are gaps to fill. Review the explanations carefully and try this level again!'},
-    low:{emoji:'💪',title:"DON'T GIVE UP!",subtitle:'Practice makes perfect',msg:'This level is challenging! Take your time, review the grammar points, and try again. Every attempt makes you stronger!'}
+    perfect:{emoji:'👑',title:'PERFECT SCORE!',subtitle:'Absolute mastery achieved',msg:'Flawless performance! Complete command of this level. 🏆'},
+    excellent:{emoji:'🎉',title:'EXCELLENT!',subtitle:'Outstanding performance',msg:'Incredible work! You clearly understand the material very well.'},
+    good:{emoji:'👍',title:'GOOD JOB!',subtitle:'Solid performance',msg:'Well done! Review the questions you missed and try again to reach perfection.'},
+    average:{emoji:'📚',title:'KEEP GOING!',subtitle:'Room for improvement',msg:'You have a foundation, but there are gaps. Review and try again!'},
+    low:{emoji:'💪',title:"DON'T GIVE UP!",subtitle:'Practice makes perfect',msg:'This level is challenging! Every attempt makes you stronger!'}
   };
   let r;
   if(score===total) r=messages.perfect; else if(score>=total*0.8) r=messages.excellent; else if(score>=total*0.6) r=messages.good; else if(score>=total*0.4) r=messages.average; else r=messages.low;
@@ -473,7 +596,69 @@ function showResults(){
   document.getElementById('resultTitle').textContent=r.title;
   document.getElementById('resultSubtitle').textContent=r.subtitle;
   document.getElementById('resultMessage').textContent=r.msg;
+  
+  // Certificate
+  const certArea = document.getElementById('certArea');
+  if(score >= total*0.6){
+    certArea.innerHTML = `
+      <div class="cert">
+        <div class="cert-seal">🏅</div>
+        <div class="cert-title">Certificate of Achievement</div>
+        <div class="cert-name">${playerName || 'Student'}</div>
+        <div class="cert-level">Level ${currentLevel} — ${['','Beginner+','Intermediate','Upper-Int.','Expert'][currentLevel]} • ${percent}%</div>
+        <div class="cert-desc">has successfully completed the DELF English Challenge with a passing score, demonstrating proficiency in English grammar and vocabulary.</div>
+        <div class="cert-date">${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</div>
+      </div>
+    `;
+  } else {
+    certArea.innerHTML = '';
+  }
+  
   if(score>=total*0.8){ soundWin(); launchConfetti(); }
+}
+
+function saveToLeaderboard(){
+  try{
+    let lb = JSON.parse(localStorage.getItem('delf_leaderboard') || '[]');
+    const entry = {name: playerName || 'Anonymous', level: currentLevel, score: score, total: 10, date: Date.now()};
+    lb.push(entry);
+    lb.sort((a,b)=> (b.score/a.total) - (a.score/a.total) || b.level - a.level);
+    lb = lb.slice(0,20);
+    localStorage.setItem('delf_leaderboard', JSON.stringify(lb));
+  }catch(e){}
+}
+
+function showLeaderboard(){
+  let lb = [];
+  try{ lb = JSON.parse(localStorage.getItem('delf_leaderboard') || '[]'); }catch(e){}
+  const content = document.getElementById('lbContent');
+  if(lb.length === 0){
+    content.innerHTML = '<div class="leaderboard"><div class="lb-empty">No scores yet. Be the first champion! 🏆</div></div>';
+  } else {
+    content.innerHTML = '<div class="leaderboard"><h4>🏆 Top Players</h4>' + lb.map((e,i)=>`
+      <div class="lb-row">
+        <span class="lb-name">${i+1}. ${escapeHtml(e.name)} <span style="color:var(--muted);font-size:0.75rem;">(L${e.level})</span></span>
+        <span class="lb-score">${e.score}/${e.total}</span>
+      </div>
+    `).join('') + '</div>';
+  }
+  document.getElementById('lbModal').classList.add('show');
+}
+function closeLeaderboard(){ document.getElementById('lbModal').classList.remove('show'); }
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function shareResult(){
+  const text = `I scored ${score}/10 on Level ${currentLevel} of the DELF English Challenge! 🏆 Can you beat me?`;
+  if(navigator.share){
+    navigator.share({title:'DELF English Challenge', text}).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(text).then(()=>{
+      const btn = event.target;
+      const old = btn.textContent;
+      btn.textContent = '✅ Copied!';
+      setTimeout(()=>btn.textContent = old, 2000);
+    }).catch(()=>{});
+  }
 }
 
 function launchConfetti(){
@@ -492,10 +677,24 @@ function launchConfetti(){
 }
 
 function restartQuiz(){ startQuiz(currentLevel); }
-function goHome(){ clearInterval(timerInterval); showScreen('welcomeScreen'); }
+function goHome(){ clearInterval(timerInterval); showScreen('welcomeScreen'); updateLevelLocks(); }
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e=>{
+  if(!document.getElementById('quizScreen').classList.contains('active')) return;
+  if(answered && e.key === 'Enter'){ nextQuestion(); return; }
+  const k = e.key.toLowerCase();
+  const idx = ['a','b','c','d'].indexOf(k);
+  if(idx >= 0){
+    const options = document.querySelectorAll('.option');
+    if(options[idx] && !options[idx].classList.contains('disabled')) options[idx].click();
+  }
+});
 
 document.addEventListener('DOMContentLoaded',()=>{
   showScreen('welcomeScreen');
+  updateLevelLocks();
+  document.querySelector('.icon-btn[onclick="toggleTheme()"]').textContent = darkMode?'🌙':'☀️';
   document.addEventListener('click',()=>{ if(!audioCtx) initAudio(); },{once:true});
 });
 </script>
