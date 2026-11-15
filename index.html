@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DELF English Challenge — The Ultimate English Proficiency Test. 10 levels, 100 questions, American English File 1 & 2.">
-<title>DELF English Challenge | The Ultimate Proficiency Test</title>
+<meta name="description" content="DELF English Institute — The Ultimate English Proficiency Platform. 10 levels, 100+ questions, daily challenges, personal profiles.">
+<title>DELF English Institute | The Ultimate Proficiency Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet">
@@ -20,7 +20,6 @@
   }
   body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased;}
 
-  /* AMBIENT */
   body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(0,229,255,0.1),transparent),radial-gradient(ellipse 80% 60% at 80% 90%,rgba(255,0,110,0.1),transparent),radial-gradient(ellipse 60% 50% at 50% 50%,rgba(124,58,237,0.06),transparent);z-index:-3;animation:ambientPulse 12s ease-in-out infinite;}
   @keyframes ambientPulse{0%,100%{opacity:0.7;}50%{opacity:1;}}
   .grid-overlay{position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.02) 1px,transparent 1px);background-size:64px 64px;z-index:-2;mask-image:radial-gradient(ellipse at center,black 15%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center,black 15%,transparent 75%);animation:gridDrift 40s linear infinite;}
@@ -32,7 +31,7 @@
   .orb3{width:350px;height:350px;background:#7c3aed;top:45%;left:48%;animation-delay:-16s;}
   @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(70px,-50px) scale(1.15);}50%{transform:translate(-50px,60px) scale(0.9);}75%{transform:translate(40px,40px) scale(1.05);}}
 
-  .wrap{max-width:1240px;margin:0 auto;padding:24px 22px 60px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;}
+  .wrap{max-width:1280px;margin:0 auto;padding:24px 22px 60px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;}
   .screen{display:none;animation:enterScreen 0.7s cubic-bezier(0.16,1,0.3,1);}
   .screen.active{display:block;}
   @keyframes enterScreen{from{opacity:0;transform:translateY(40px) scale(0.98);}to{opacity:1;transform:translateY(0) scale(1);}}
@@ -40,10 +39,11 @@
   /* TOPBAR */
   .topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 0 24px;flex-wrap:wrap;gap:12px;}
   .brand{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase;}
-  .brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent4));display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 28px rgba(0,229,255,0.4);}
-  .topbar-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .brand-mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent4));display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 0 28px rgba(0,229,255,0.4);}
+  .topbar-btns{display:flex;gap:6px;flex-wrap:wrap;}
   .icon-btn{width:40px;height:40px;border-radius:11px;background:var(--card2);border:1px solid var(--border);color:var(--text);font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s;position:relative;}
   .icon-btn:hover{border-color:var(--accent);transform:scale(1.06);box-shadow:0 8px 20px rgba(0,229,255,0.2);}
+  .icon-btn .dot{position:absolute;top:6px;right:6px;width:8px;height:8px;background:var(--red);border-radius:50%;border:2px solid var(--card2);}
 
   /* HERO */
   .hero{text-align:center;padding:12px 0 32px;}
@@ -53,24 +53,40 @@
   @keyframes dotPulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
   .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,8vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.035em;margin-bottom:16px;background:linear-gradient(135deg,#00e5ff 0%,#ffffff 45%,#ff006e 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:heroGradient 6s ease infinite;}
   @keyframes heroGradient{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
-  .hero-sub{font-size:clamp(0.9rem,2vw,1.08rem);color:var(--muted);max-width:700px;margin:0 auto 22px;line-height:1.75;}
+  .hero-sub{font-size:clamp(0.9rem,2vw,1.08rem);color:var(--muted);max-width:720px;margin:0 auto 22px;line-height:1.75;}
   .hero-sub strong{color:var(--text);font-weight:600;}
 
   /* PLAYER CARD */
-  .player-card{display:flex;align-items:center;gap:14px;padding:14px 22px;background:linear-gradient(135deg,rgba(0,229,255,0.06),rgba(124,58,237,0.06));border:1px solid rgba(0,229,255,0.2);border-radius:18px;margin:0 auto 24px;max-width:460px;position:relative;overflow:hidden;}
+  .player-card{display:flex;align-items:center;gap:14px;padding:16px 22px;background:linear-gradient(135deg,rgba(0,229,255,0.06),rgba(124,58,237,0.06));border:1px solid rgba(0,229,255,0.2);border-radius:18px;margin:0 auto 24px;max-width:560px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.3s;}
+  .player-card:hover{border-color:rgba(0,229,255,0.4);transform:translateY(-2px);}
   .player-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent4),var(--accent2));}
-  .avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent4));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--bg);flex-shrink:0;box-shadow:0 0 20px rgba(0,229,255,0.4);}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent4));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--bg);flex-shrink:0;box-shadow:0 0 20px rgba(0,229,255,0.4);position:relative;}
+  .avatar .rank-badge{position:absolute;bottom:-4px;right:-4px;width:22px;height:22px;border-radius:50%;background:var(--gold);border:2px solid var(--bg);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#1a1f3a;}
   .player-info{text-align:left;flex:1;}
-  .player-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:2px;}
+  .player-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;margin-bottom:3px;}
   .player-progress{font-size:0.78rem;color:var(--muted);}
-  .player-xp{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.9rem;color:var(--accent3);}
+  .player-xp{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--accent3);text-align:right;}
+  .player-xp small{display:block;font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+
+  /* DAILY CHALLENGE */
+  .daily-card{background:linear-gradient(160deg,rgba(212,175,55,0.08),rgba(11,15,36,0.95));border:1px solid rgba(212,175,55,0.35);border-radius:20px;padding:22px;margin-bottom:26px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);}
+  .daily-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 20px 40px rgba(212,175,55,0.2);}
+  .daily-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d4af37,#f4d03f,#d4af37);background-size:200% 100%;animation:topLineFlow 3s linear infinite;}
+  @keyframes topLineFlow{0%{background-position:0% 0;}100%{background-position:200% 0;}}
+  .daily-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+  .daily-icon{font-size:2rem;filter:drop-shadow(0 0 12px rgba(212,175,55,0.6));}
+  .daily-title{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--gold);flex:1;}
+  .daily-badge{padding:4px 12px;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);border-radius:100px;font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;}
+  .daily-badge.done{background:rgba(0,255,136,0.15);border-color:rgba(0,255,136,0.4);color:var(--green);}
+  .daily-desc{font-size:0.88rem;color:var(--muted);line-height:1.6;}
+  .daily-reward{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 14px;background:rgba(255,214,10,0.1);border:1px solid rgba(255,214,10,0.3);border-radius:100px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;color:var(--accent3);}
 
   /* SECTION */
   .section-head{text-align:center;margin:26px 0 22px;}
   .section-head h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.15rem,3vw,1.55rem);font-weight:700;letter-spacing:-0.01em;margin-bottom:5px;}
   .section-head p{font-size:0.82rem;color:var(--muted);}
 
-  /* LEVELS MAP — 10 */
+  /* LEVELS */
   .levels-map{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:26px;}
   .level-tile{background:linear-gradient(160deg,rgba(11,15,36,0.95),rgba(3,4,12,0.95));border:1px solid var(--border);border-radius:18px;padding:18px 12px 16px;cursor:pointer;transition:all 0.45s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden;text-align:center;display:flex;flex-direction:column;align-items:center;}
   .level-tile::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,var(--glowColor,rgba(0,229,255,0.15)),transparent 70%);opacity:0;transition:opacity 0.4s;pointer-events:none;}
@@ -106,11 +122,13 @@
   .lt-cefr{font-size:8px;font-weight:700;letter-spacing:1.5px;color:var(--muted);padding:2px 7px;border:1px solid var(--border);border-radius:100px;text-transform:uppercase;}
   .lt-score{font-size:9px;color:var(--green);margin-top:6px;font-weight:700;letter-spacing:1px;}
 
-  /* INFO STRIP */
-  .info-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px;padding-top:26px;border-top:1px solid var(--border);}
-  .info-item{text-align:center;padding:14px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:14px;}
-  .info-item .num{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--accent);margin-bottom:3px;}
-  .info-item .lbl{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
+  /* STATS GRID */
+  .stats-overview{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:26px;}
+  .stat-card{padding:18px 14px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;text-align:center;transition:all 0.3s;}
+  .stat-card:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.3);}
+  .stat-icon{font-size:1.5rem;margin-bottom:6px;}
+  .stat-value{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;line-height:1;margin-bottom:3px;}
+  .stat-label{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
 
   /* QUIZ */
   .quiz-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
@@ -135,7 +153,6 @@
 
   .question-card{background:linear-gradient(160deg,rgba(11,15,36,0.98),rgba(3,4,12,0.98));border:1px solid var(--border);border-radius:24px;padding:34px;margin-bottom:18px;position:relative;overflow:hidden;box-shadow:var(--shadow);}
   .question-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent4),var(--accent2),var(--accent3));background-size:200% 100%;animation:topLineFlow 4s linear infinite;}
-  @keyframes topLineFlow{0%{background-position:0% 0;}100%{background-position:200% 0;}}
   .q-label{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
   .q-label::before{content:'';width:22px;height:2px;background:var(--accent);border-radius:2px;}
   .q-tag{display:inline-block;padding:3px 10px;background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);border-radius:100px;font-size:9px;color:#a78bfa;letter-spacing:1px;margin-left:auto;}
@@ -206,20 +223,17 @@
 
   .footer{text-align:center;padding:26px 0 0;margin-top:32px;border-top:1px solid var(--border);font-size:0.7rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;font-weight:600;}
 
-  /* CONFETTI */
   .confetti{position:fixed;width:10px;height:10px;z-index:9999;pointer-events:none;animation:confettiFall 3.5s linear forwards;}
   @keyframes confettiFall{0%{transform:translateY(-100vh) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
 
-  /* FLOATING BUTTONS */
   .sound-toggle{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--card2);border:1px solid var(--border);color:var(--text);font-size:20px;cursor:pointer;z-index:100;display:flex;align-items:center;justify-content:center;transition:all 0.3s;box-shadow:0 8px 24px rgba(0,0,0,0.4);}
   .sound-toggle:hover{transform:scale(1.1);border-color:var(--accent);}
   .music-toggle{position:fixed;bottom:20px;right:78px;width:48px;height:48px;border-radius:50%;background:var(--card2);border:1px solid var(--border);color:var(--text);font-size:20px;cursor:pointer;z-index:100;display:flex;align-items:center;justify-content:center;transition:all 0.3s;box-shadow:0 8px 24px rgba(0,0,0,0.4);}
   .music-toggle:hover{transform:scale(1.1);border-color:var(--accent);}
 
-  /* MODALS */
   .modal-overlay{position:fixed;inset:0;background:rgba(3,4,12,0.9);backdrop-filter:blur(10px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;}
   .modal-overlay.show{display:flex;animation:fadeIn 0.3s ease;}
-  .modal{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--border);border-radius:24px;padding:36px 28px;max-width:460px;width:100%;text-align:center;position:relative;overflow:hidden;max-height:90vh;overflow-y:auto;}
+  .modal{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--border);border-radius:24px;padding:36px 28px;max-width:480px;width:100%;text-align:center;position:relative;overflow:hidden;max-height:90vh;overflow-y:auto;}
   .modal::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent4),var(--accent2));}
   .modal h3{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:8px;}
   .modal p{color:var(--muted);font-size:0.88rem;margin-bottom:22px;}
@@ -235,24 +249,20 @@
   .lb-score{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--accent3);}
   .lb-empty{color:var(--muted);font-size:0.8rem;text-align:center;padding:12px 0;font-style:italic;}
 
-  /* PROFILE STATS */
   .profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px;}
   .profile-stat{padding:16px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;text-align:left;}
   .profile-stat .ps-lbl{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:4px;}
   .profile-stat .ps-val{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:var(--accent);}
 
-  /* ACHIEVEMENTS */
   .achievements-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;}
   .ach{aspect-ratio:1;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.5rem;position:relative;transition:all 0.3s;cursor:help;}
   .ach.unlocked{background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(255,214,10,0.1));border-color:rgba(212,175,55,0.5);box-shadow:0 0 16px rgba(212,175,55,0.2);}
   .ach.locked{opacity:0.3;filter:grayscale(1);}
 
-  /* HISTORY */
   .history-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.83rem;}
   .history-row:last-child{border-bottom:none;}
   .history-date{color:var(--muted);font-size:0.75rem;}
 
-  /* SETTINGS */
   .settings-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
   .settings-row:last-child{border-bottom:none;}
   .settings-label{font-size:0.9rem;font-weight:500;}
@@ -261,14 +271,17 @@
   .settings-toggle::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:all 0.3s;}
   .settings-toggle.on::after{left:25px;}
 
-  /* TOAST */
   .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(100px);padding:14px 24px;background:var(--card2);border:1px solid var(--accent);border-radius:12px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.9rem;z-index:300;opacity:0;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 12px 32px rgba(0,0,0,0.5);pointer-events:none;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-  /* RESPONSIVE */
+  /* DAILY QUIZ */
+  .daily-big{max-width:720px;margin:0 auto;}
+  .daily-big .question-card{padding:42px;}
+  .daily-big .q-text{font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.7;}
+
   @media(max-width:900px){
     .levels-map{grid-template-columns:repeat(3,1fr);}
-    .info-strip{grid-template-columns:repeat(2,1fr);}
+    .stats-overview{grid-template-columns:repeat(2,1fr);}
     .achievements-grid{grid-template-columns:repeat(4,1fr);}
   }
   @media(max-width:600px){
@@ -298,7 +311,7 @@
 <div class="orb orb3"></div>
 
 <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Toggle sound">🔊</button>
-<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Toggle music">🎵</button>
+<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Toggle music">🎶</button>
 
 <div class="toast" id="toast"></div>
 
@@ -319,26 +332,40 @@
       </div>
     </div>
     <div class="hero">
-      <div class="eyebrow">Official English Proficiency Challenge</div>
+      <div class="eyebrow">Official English Proficiency Platform</div>
       <h1>English Challenge</h1>
-      <p class="hero-sub">A world-class English assessment for <strong>DELF students</strong>. Conquer <strong>10 levels</strong>, master <strong>100 questions</strong> from American English File 1 & 2, earn <strong>XP</strong>, unlock <strong>achievements</strong>, and collect your <strong>international certificate</strong>.</p>
+      <p class="hero-sub">A world-class English assessment platform for <strong>DELF students</strong>. Conquer <strong>10 levels</strong>, answer <strong>100+ questions</strong>, take on the <strong>daily challenge</strong>, earn XP, unlock achievements, and collect your international certificate.</p>
     </div>
-    <div class="player-card" id="playerCard" style="display:none;">
+    <div class="player-card" id="playerCard" style="display:none;" onclick="showProfile()">
       <div class="avatar" id="avatarInitial">?</div>
       <div class="player-info">
         <div class="player-name" id="playerNameDisplay">Student</div>
-        <div class="player-progress" id="playerProgress">0 / 10 levels completed</div>
+        <div class="player-progress" id="playerProgress">0 / 10 levels • Novice</div>
       </div>
-      <div class="player-xp" id="playerXp">0 XP</div>
+      <div class="player-xp" id="playerXp">0<small>XP</small></div>
     </div>
+
+    <!-- DAILY CHALLENGE -->
+    <div class="daily-card" id="dailyCard" onclick="startDaily()">
+      <div class="daily-header">
+        <div class="daily-icon">🎯</div>
+        <div class="daily-title">Daily Challenge</div>
+        <div class="daily-badge" id="dailyBadge">TODAY</div>
+      </div>
+      <div class="daily-desc">One extremely challenging question, handpicked for today. Few can solve it. Are you one of them?</div>
+      <div class="daily-reward">💰 +100 XP Reward</div>
+    </div>
+
     <div class="section-head"><h2>The Journey — 10 Levels</h2><p>Score 60%+ on each level to unlock the next</p></div>
     <div class="levels-map" id="levelsGrid"></div>
-    <div class="info-strip">
-      <div class="info-item"><div class="num" id="infoQ">100</div><div class="lbl">Questions</div></div>
-      <div class="info-item"><div class="num">10</div><div class="lbl">Levels</div></div>
-      <div class="info-item"><div class="num" id="infoXp">0</div><div class="lbl">Your XP</div></div>
-      <div class="info-item"><div class="num" id="infoAch">0</div><div class="lbl">Achievements</div></div>
+
+    <div class="stats-overview">
+      <div class="stat-card"><div class="stat-icon">🎓</div><div class="stat-value" id="statLevels">0</div><div class="stat-label">Levels Done</div></div>
+      <div class="stat-card"><div class="stat-icon">⚡</div><div class="stat-value" id="statXp">0</div><div class="stat-label">Total XP</div></div>
+      <div class="stat-card"><div class="stat-icon">🏅</div><div class="stat-value" id="statAch">0</div><div class="stat-label">Achievements</div></div>
+      <div class="stat-card"><div class="stat-icon">👑</div><div class="stat-value" id="statRank">Novice</div><div class="stat-label">Your Rank</div></div>
     </div>
+
     <div class="footer">DELF • English Department • American English File Series</div>
   </div>
 
@@ -362,6 +389,28 @@
       <div class="explanation" id="explanation"></div>
     </div>
     <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+    <div class="footer">DELF • English Department • American English File Series</div>
+  </div>
+
+  <!-- DAILY QUIZ -->
+  <div class="screen" id="dailyScreen">
+    <div class="daily-big">
+      <div class="quiz-topbar">
+        <div class="quiz-level" style="background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(255,214,10,0.15));border-color:rgba(212,175,55,0.4);color:var(--gold);">🎯 DAILY CHALLENGE</div>
+        <div class="quiz-meta">
+          <div class="meta-pill meta-score" id="dailyScorePill">💰 +100 XP</div>
+          <div class="meta-pill meta-timer" id="dailyTimer">⏱ 30s</div>
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="dailyProgress" style="width:100%;background:linear-gradient(90deg,#d4af37,#f4d03f);"></div></div>
+      <div class="question-card">
+        <div class="q-label" style="color:var(--gold);">DAILY QUESTION <span class="q-tag" style="background:rgba(212,175,55,0.15);border-color:rgba(212,175,55,0.3);color:var(--gold);">VERY HARD</span></div>
+        <div class="q-text" id="dailyQuestionText"></div>
+        <div class="options" id="dailyOptions"></div>
+        <div class="explanation" id="dailyExplanation"></div>
+      </div>
+      <button class="next-btn" id="dailyNextBtn" onclick="goHome()">🏠 Back to Home</button>
+    </div>
     <div class="footer">DELF • English Department • American English File Series</div>
   </div>
 
@@ -401,10 +450,10 @@
 <!-- NAME MODAL -->
 <div class="modal-overlay" id="nameModal">
   <div class="modal">
-    <h3>👋 Welcome to DELF Challenge</h3>
-    <p>Enter your name to save your progress, appear on the leaderboard, and unlock achievements.</p>
+    <h3>👋 Welcome to DELF Institute</h3>
+    <p>Create your personal profile to save progress, earn XP, and unlock achievements.</p>
     <input type="text" id="nameInput" placeholder="Your full name" maxlength="30" autocomplete="off">
-    <button class="btn btn-primary" onclick="saveName()">Start Challenge →</button>
+    <button class="btn btn-primary" onclick="saveName()">Create Profile →</button>
   </div>
 </div>
 
@@ -431,9 +480,9 @@
 
 <!-- PROFILE MODAL -->
 <div class="modal-overlay" id="profileModal">
-  <div class="modal" style="max-width:520px;">
-    <h3>👤 Your Profile</h3>
-    <p>Your performance overview</p>
+  <div class="modal" style="max-width:540px;">
+    <h3>👤 Personal Profile</h3>
+    <p>Your complete performance overview</p>
     <div id="profileContent"></div>
     <button class="btn btn-ghost" onclick="closeModal('profileModal')" style="margin-top:16px;">Close</button>
   </div>
@@ -494,22 +543,23 @@ let audioCtx = null;
 let musicNodes = null;
 
 let currentLevel=1,currentQIndex=0,score=0,timerInterval=null,timeLeft=15,answered=false,correctCount=0,wrongCount=0,currentStreak=0,bestStreak=0;
-let hintUsed=false;
+let hintUsed=false, isDailyMode=false;
 const TOTAL_TIME=15;
+const DAILY_TIME=30;
 const TOTAL_LEVELS = 10;
 let playerName = localStorage.getItem('delf_name') || '';
 
-// ============ XP & LEVELING ============
+// ============ XP & RANK ============
 function getXP(){ return parseInt(localStorage.getItem('delf_xp') || '0'); }
-function addXP(n){ const xp = getXP() + n; localStorage.setItem('delf_xp', xp); }
+function addXP(n){ localStorage.setItem('delf_xp', getXP() + n); }
 function getPlayerRank(){
   const xp = getXP();
-  if(xp >= 2000) return 'Legend';
-  if(xp >= 1000) return 'Master';
-  if(xp >= 500) return 'Expert';
-  if(xp >= 200) return 'Advanced';
-  if(xp >= 100) return 'Intermediate';
-  if(xp >= 30) return 'Learner';
+  if(xp >= 3000) return 'Legend';
+  if(xp >= 1500) return 'Master';
+  if(xp >= 700) return 'Expert';
+  if(xp >= 300) return 'Advanced';
+  if(xp >= 120) return 'Intermediate';
+  if(xp >= 40) return 'Learner';
   return 'Novice';
 }
 
@@ -533,7 +583,6 @@ function soundWin(){ initAudio(); [523,659,784,1047].forEach((f,i)=>setTimeout((
 function soundUnlock(){ initAudio(); [880,1047,1319].forEach((f,i)=>setTimeout(()=>playTone(f,0.2,'sine',0.12),i*100)); }
 
 function toggleSound(){ soundEnabled=!soundEnabled; localStorage.setItem('delf_sound', soundEnabled?'on':'off'); document.getElementById('soundToggle').textContent=soundEnabled?'🔊':'🔇'; syncToggles(); if(soundEnabled){initAudio();playTone(800,0.1);} }
-
 function toggleMusic(){
   musicEnabled = !musicEnabled;
   localStorage.setItem('delf_music', musicEnabled?'on':'off');
@@ -546,31 +595,21 @@ function startMusic(){
     initAudio();
     if(!audioCtx) return;
     stopMusic();
-    const osc1 = audioCtx.createOscillator();
-    const osc2 = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc1.type = 'sine'; osc1.frequency.value = 220;
-    osc2.type = 'sine'; osc2.frequency.value = 277.18;
-    gain.gain.value = 0.02;
+    const osc1 = audioCtx.createOscillator(), osc2 = audioCtx.createOscillator(), gain = audioCtx.createGain();
+    osc1.type='sine'; osc1.frequency.value=220;
+    osc2.type='sine'; osc2.frequency.value=277.18;
+    gain.gain.value=0.02;
     const filter = audioCtx.createBiquadFilter();
-    filter.type = 'lowpass'; filter.frequency.value = 800;
+    filter.type='lowpass'; filter.frequency.value=800;
     osc1.connect(filter); osc2.connect(filter); filter.connect(gain); gain.connect(audioCtx.destination);
     osc1.start(); osc2.start();
-    // LFO for gentle sweep
-    const lfo = audioCtx.createOscillator();
-    const lfoGain = audioCtx.createGain();
-    lfo.frequency.value = 0.1; lfoGain.gain.value = 30;
-    lfo.connect(lfoGain); lfoGain.connect(osc1.frequency);
-    lfo.start();
+    const lfo = audioCtx.createOscillator(), lfoGain = audioCtx.createGain();
+    lfo.frequency.value=0.1; lfoGain.gain.value=30;
+    lfo.connect(lfoGain); lfoGain.connect(osc1.frequency); lfo.start();
     musicNodes = {osc1,osc2,gain,lfo};
   }catch(e){}
 }
-function stopMusic(){
-  if(musicNodes){
-    try{ musicNodes.osc1.stop(); musicNodes.osc2.stop(); musicNodes.lfo.stop(); }catch(e){}
-    musicNodes = null;
-  }
-}
+function stopMusic(){ if(musicNodes){ try{ musicNodes.osc1.stop(); musicNodes.osc2.stop(); musicNodes.lfo.stop(); }catch(e){} musicNodes=null; } }
 
 function syncToggles(){
   document.getElementById('togSound').classList.toggle('on', soundEnabled);
@@ -581,11 +620,7 @@ function syncToggles(){
 
 // ============ THEME ============
 let darkMode = localStorage.getItem('delf_theme') !== 'light';
-function toggleTheme(){
-  darkMode = !darkMode;
-  applyTheme();
-  syncToggles();
-}
+function toggleTheme(){ darkMode = !darkMode; applyTheme(); syncToggles(); }
 function applyTheme(){
   document.documentElement.style.setProperty('--bg', darkMode?'#03040c':'#f0f2f8');
   document.documentElement.style.setProperty('--bg2', darkMode?'#070a18':'#e8ebf5');
@@ -602,41 +637,35 @@ function applyTheme(){
 // ============ TOAST ============
 let toastTimeout = null;
 function showToast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(()=>t.classList.remove('show'), 3000);
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimeout); toastTimeout = setTimeout(()=>t.classList.remove('show'), 3000);
 }
 
 // ============ ACHIEVEMENTS ============
 const ACHIEVEMENTS = [
   {id:'first_step', icon:'👣', name:'First Step', desc:'Complete Level 1'},
-  {id:'perfect', icon:'💯', name:'Perfectionist', desc:'Get 10/10 on any level'},
+  {id:'perfect', icon:'💯', name:'Perfectionist', desc:'10/10 on any level'},
   {id:'streak5', icon:'🔥', name:'On Fire', desc:'5-correct streak'},
   {id:'streak10', icon:'⚡', name:'Unstoppable', desc:'10-correct streak'},
   {id:'halfway', icon:'🏔️', name:'Halfway There', desc:'Complete 5 levels'},
   {id:'master', icon:'👑', name:'Grand Master', desc:'Complete all 10 levels'},
-  {id:'speed', icon:'⚡', name:'Speed Demon', desc:'Answer 5 in under 5s each'},
-  {id:'no_hint', icon:'🧠', name:'Pure Brain', desc:'Score 10/10 without hints'},
+  {id:'no_hint', icon:'🧠', name:'Pure Brain', desc:'10/10 without hints'},
   {id:'comeback', icon:'🎯', name:'Comeback Kid', desc:'Pass after failing'},
   {id:'explorer', icon:'🧭', name:'Explorer', desc:'Try all 10 levels'},
   {id:'hintmaster', icon:'💡', name:'Hint Master', desc:'Use 5 hints'},
-  {id:'collector', icon:'💎', name:'Collector', desc:'Unlock 8 achievements'}
+  {id:'collector', icon:'💎', name:'Collector', desc:'Unlock 8 achievements'},
+  {id:'daily', icon:'🎯', name:'Daily Solver', desc:'Solve a daily challenge'}
 ];
-
 function getAchievements(){ try{ return JSON.parse(localStorage.getItem('delf_achievements') || '[]'); }catch(e){ return []; } }
 function unlockAchievement(id){
   const achs = getAchievements();
   if(achs.includes(id)) return;
-  achs.push(id);
-  localStorage.setItem('delf_achievements', JSON.stringify(achs));
+  achs.push(id); localStorage.setItem('delf_achievements', JSON.stringify(achs));
   const ach = ACHIEVEMENTS.find(a=>a.id===id);
-  if(ach){ soundUnlock(); showToast('🏅 Achievement Unlocked: ' + ach.name); }
+  if(ach){ soundUnlock(); showToast('🏅 Achievement: ' + ach.name); }
 }
 function checkAchievements(){
-  const scores = [];
-  for(let i=1;i<=TOTAL_LEVELS;i++) scores.push(getLevelScore(i));
+  const scores = []; for(let i=1;i<=TOTAL_LEVELS;i++) scores.push(getLevelScore(i));
   const completed = scores.filter(s=>s>=6).length;
   if(completed >= 1) unlockAchievement('first_step');
   if(scores.some(s=>s===10)) unlockAchievement('perfect');
@@ -647,9 +676,8 @@ function checkAchievements(){
 }
 
 // ============ HINTS ============
-function getHintsLeft(){ return parseInt(localStorage.getItem('delf_hints') || '3'); }
 function useHint(){
-  if(answered || hintUsed) return;
+  if(answered || hintUsed || isDailyMode) return;
   const qData = QUESTIONS[currentLevel][currentQIndex];
   const options = document.querySelectorAll('.option');
   const wrongIndices = [0,1,2,3].filter(i=>i!==qData.correct);
@@ -658,14 +686,134 @@ function useHint(){
     options[toEliminate].classList.add('eliminated','disabled');
     hintUsed = true;
     document.getElementById('hintPill').classList.add('used');
-    const left = getHintsLeft();
-    if(left > 0){
-      localStorage.setItem('delf_hints', Math.max(0, left-1));
-      if(left-1 === 0) showToast('No more hints available');
-    }
     let hintUseCount = parseInt(localStorage.getItem('delf_hint_uses') || '0') + 1;
     localStorage.setItem('delf_hint_uses', hintUseCount);
     if(hintUseCount >= 5) unlockAchievement('hintmaster');
+  }
+}
+
+// ============ DAILY CHALLENGE ============
+const DAILY_QUESTIONS = [
+  {tag:"INVERSION",q:"______ that the CEO would resign, the board called an emergency meeting.",options:["It was only rumored","Only was it rumored","Only it was rumored","It only was rumored"],correct:1,exp:"Inversion after 'Only': Only was it rumored... The main clause uses inversion because 'Only' is at the front."},
+  {tag:"SUBJUNCTIVE",q:"I'd sooner you ______ told him the truth. The lies have only made things worse.",options:["had","have","would have","did"],correct:0,exp:"I'd sooner (= I'd rather) + Past Perfect for past regret about another person's action."},
+  {tag:"MIXED CONDITIONAL",q:"If she hadn't quit the project halfway through, we ______ in this mess right now.",options:["wouldn't be","wouldn't have been","won't be","aren't"],correct:0,exp:"Mixed conditional: past cause (hadn't quit) + present result (wouldn't be in this mess)."},
+  {tag:"RELATIVE",q:"There were three candidates, none of ______ had the qualifications we were looking for.",options:["who","whom","which","that"],correct:1,exp:"Whom after a preposition ('of whom') in formal English. 'Who' is subject; 'whom' is object."},
+  {tag:"PARTICIPLE",q:"______ the evidence, she realized she had been deceived all along.",options:["Having examined","Examining","Examined","To examine"],correct:0,exp:"Perfect participle (Having + pp) for an action completed before the main verb. Shows prior action."},
+  {tag:"INVERSION",q:"Such ______ the impact of the speech that several delegates requested copies afterwards.",options:["was","it was","was there","there was"],correct:0,exp:"Inversion after 'Such': Such was the impact... = The impact was such that..."},
+  {tag:"MODAL PERFECT",q:"You ______ have reminded me — I might have completely forgotten the appointment!",options:["needn't","might","could","shall"],correct:2,exp:"'Could have + pp' expresses possibility that wasn't realized. 'Needn't have' means unnecessary past action."},
+  {tag:"MIXED CONDITIONAL",q:"Had it not been for your timely intervention, the situation ______ far worse.",options:["would have become","would become","became","will become"],correct:0,exp:"Inverted Third Conditional: Had it not been for... + would have become."},
+  {tag:"RELATIVE",q:"He's the kind of person for ______ nothing ever seems impossible.",options:["who","whom","which","that"],correct:1,exp:"Whom after the preposition 'for' (for whom). Who would be wrong after a preposition."},
+  {tag:"INVERSION",q:"Little ______ how much trouble his comment would cause.",options:["he realized","did he realize","he did realize","realized he"],correct:1,exp:"Inversion after negative adverbial 'Little': did he realize. Emphatic structure."},
+  {tag:"INVERSION",q:"Nowhere in the report ______ any mention of the missing funds.",options:["there was","was there","it was","was it"],correct:1,exp:"Inversion after 'Nowhere': Nowhere was there any mention. 'There was' would be ungrammatical."},
+  {tag:"CAUSATIVE",q:"She had her assistant ______ every email before it left the office.",options:["checked","to check","check","checking"],correct:2,exp:"Have + person + base verb (have someone do something). Not 'to check'."},
+  {tag:"SUBJUNCTIVE",q:"I'd just as soon you ______ the meeting tomorrow. Your presence isn't required.",options:["didn't attend","don't attend","won't attend","wouldn't attend"],correct:0,exp:"'I'd just as soon' + Past Simple (didn't attend) for present/future preference — subjunctive-style."},
+  {tag:"MIXED CONDITIONAL",q:"But for the hundreds of volunteers ______ helped, the event would have been a disaster.",options:["who","whom","which","whose"],correct:0,exp:"'Who' as subject of 'helped'. But for + noun phrase expressing unreal condition in the past."},
+  {tag:"INVERSION",q:"Rarely ______ a more compelling argument presented in a single paragraph.",options:["I have seen","have I seen","I saw","did I see"],correct:1,exp:"Inversion after 'Rarely': have I seen. Present Perfect for life experience up to now."}
+];
+
+function getTodayDailyIndex(){ return Math.floor(Date.now() / (1000*60*60*24)) % DAILY_QUESTIONS.length; }
+function getTodayKey(){ return new Date().toISOString().slice(0,10); }
+function isDailyCompleted(){ return localStorage.getItem('delf_daily_' + getTodayKey()) === 'done'; }
+
+function startDaily(){
+  if(!playerName){ showNameModalForDaily(); return; }
+  if(isDailyCompleted()){ showToast('✅ Already completed today! Come back tomorrow'); return; }
+  isDailyMode = true;
+  answered = false;
+  const idx = getTodayDailyIndex();
+  const qData = DAILY_QUESTIONS[idx];
+  document.getElementById('dailyQuestionText').innerHTML = qData.q.replace(/______/g,'<span class="blank">?</span>');
+  const oc = document.getElementById('dailyOptions'); oc.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  qData.options.forEach((opt,i)=>{
+    const btn = document.createElement('button');
+    btn.className='option';
+    btn.innerHTML=`<span class="option-letter">${letters[i]}</span><span>${opt}</span>`;
+    btn.onclick = ()=>selectDailyAnswer(i, qData);
+    oc.appendChild(btn);
+  });
+  document.getElementById('dailyExplanation').classList.remove('show');
+  document.getElementById('dailyExplanation').innerHTML = '';
+  document.getElementById('dailyNextBtn').classList.remove('show');
+  showScreen('dailyScreen');
+  startDailyTimer();
+}
+
+let dailyTimerInterval = null, dailyTimeLeft = 30;
+function startDailyTimer(){
+  clearInterval(dailyTimerInterval);
+  if(!timerEnabled){ document.getElementById('dailyTimer').style.display='none'; return; }
+  document.getElementById('dailyTimer').style.display='inline-flex';
+  dailyTimeLeft = DAILY_TIME;
+  updateDailyTimer();
+  dailyTimerInterval = setInterval(()=>{
+    dailyTimeLeft--; updateDailyTimer();
+    if(dailyTimeLeft===5) soundTick();
+    if(dailyTimeLeft<=0){ clearInterval(dailyTimerInterval); if(!answered) dailyTimeUp(); }
+  },1000);
+}
+function updateDailyTimer(){
+  const el = document.getElementById('dailyTimer');
+  el.textContent = '⏱ ' + dailyTimeLeft + 's';
+  el.classList.toggle('warning', dailyTimeLeft<=5);
+}
+
+function dailyTimeUp(){
+  answered = true;
+  const qData = DAILY_QUESTIONS[getTodayDailyIndex()];
+  document.querySelectorAll('#dailyOptions .option').forEach((opt,i)=>{
+    opt.classList.add('disabled');
+    if(i===qData.correct) opt.classList.add('correct');
+    else opt.classList.add('wrong');
+  });
+  soundTimeUp();
+  const exp = document.getElementById('dailyExplanation');
+  exp.innerHTML = '<strong>⏰ Time\'s up!</strong> ' + qData.exp;
+  exp.classList.add('show');
+  document.getElementById('dailyNextBtn').classList.add('show');
+}
+
+function selectDailyAnswer(index, qData){
+  if(answered) return;
+  answered = true;
+  clearInterval(dailyTimerInterval);
+  const isCorrect = index === qData.correct;
+  document.querySelectorAll('#dailyOptions .option').forEach((opt,i)=>{
+    opt.classList.add('disabled');
+    if(i===qData.correct) opt.classList.add('correct');
+    if(i===index && !isCorrect) opt.classList.add('wrong');
+  });
+  const exp = document.getElementById('dailyExplanation');
+  exp.innerHTML = (isCorrect ? '<strong>✅ Correct!</strong> ' : '<strong>❌ Not quite.</strong> ') + qData.exp;
+  exp.classList.add('show');
+  document.getElementById('dailyNextBtn').classList.add('show');
+  
+  if(isCorrect){
+    soundWin();
+    launchConfetti();
+    addXP(100);
+    localStorage.setItem('delf_daily_' + getTodayKey(), 'done');
+    unlockAchievement('daily');
+    try{
+      let hist = JSON.parse(localStorage.getItem('delf_history') || '[]');
+      hist.unshift({level: 'Daily', score: 1, total: 1, date: Date.now(), xp: 100});
+      hist = hist.slice(0, 20);
+      localStorage.setItem('delf_history', JSON.stringify(hist));
+    }catch(e){}
+    // Update daily card
+    updateDailyCard();
+    renderLevels();
+  }
+}
+
+function updateDailyCard(){
+  const badge = document.getElementById('dailyBadge');
+  if(isDailyCompleted()){
+    badge.textContent = 'COMPLETED';
+    badge.classList.add('done');
+  } else {
+    badge.textContent = 'TODAY';
+    badge.classList.remove('done');
   }
 }
 
@@ -817,8 +965,7 @@ function getLevelScore(level){ return parseInt(localStorage.getItem('delf_level_
 function getCompletedCount(){ let c=0; for(let i=1;i<=TOTAL_LEVELS;i++){ if(getLevelScore(i)>=6) c++; } return c; }
 
 function renderLevels(){
-  const grid = document.getElementById('levelsGrid');
-  grid.innerHTML = '';
+  const grid = document.getElementById('levelsGrid'); grid.innerHTML = '';
   LEVEL_META.forEach(meta=>{
     const lvl = meta.num;
     const unlocked = isLevelUnlocked(lvl);
@@ -828,12 +975,7 @@ function renderLevels(){
     tile.className = 'level-tile' + (unlocked?'':' locked') + (done?' completed':'');
     tile.dataset.level = lvl;
     tile.onclick = ()=>pickLevel(lvl);
-    tile.innerHTML = `
-      <div class="lt-num">${String(lvl).padStart(2,'0')}</div>
-      <div class="lt-name">${meta.name}</div>
-      <div class="lt-cefr">${meta.cefr}</div>
-      ${done?`<div class="lt-score">✓ ${sc}/10</div>`:''}
-    `;
+    tile.innerHTML = `<div class="lt-num">${String(lvl).padStart(2,'0')}</div><div class="lt-name">${meta.name}</div><div class="lt-cefr">${meta.cefr}</div>${done?`<div class="lt-score">✓ ${sc}/10</div>`:''}`;
     grid.appendChild(tile);
   });
   const pc = document.getElementById('playerCard');
@@ -841,24 +983,30 @@ function renderLevels(){
     pc.style.display = 'flex';
     document.getElementById('avatarInitial').textContent = playerName.charAt(0).toUpperCase();
     document.getElementById('playerNameDisplay').textContent = playerName;
-    document.getElementById('playerProgress').textContent = getCompletedCount() + ' / 10 levels • Rank: ' + getPlayerRank();
-    document.getElementById('playerXp').textContent = getXP() + ' XP';
+    document.getElementById('playerProgress').textContent = getCompletedCount() + ' / 10 levels • ' + getPlayerRank();
+    document.getElementById('playerXp').innerHTML = getXP() + '<small>XP</small>';
   }
-  document.getElementById('infoXp').textContent = getXP();
-  document.getElementById('infoAch').textContent = getAchievements().length;
+  document.getElementById('statLevels').textContent = getCompletedCount();
+  document.getElementById('statXp').textContent = getXP();
+  document.getElementById('statAch').textContent = getAchievements().length;
+  document.getElementById('statRank').textContent = getPlayerRank();
+  updateDailyCard();
 }
 
 function pickLevel(level){
   if(!isLevelUnlocked(level)){ soundWrong(); showToast('🔒 Complete the previous level first'); return; }
-  if(!playerName){ showNameModal(level); return; }
+  if(!playerName){ showNameModal(level, false); return; }
   startQuiz(level);
 }
 
-function showNameModal(level){
+function showNameModal(level, daily){
   window._pendingLevel = level;
+  window._pendingDaily = daily;
   document.getElementById('nameModal').classList.add('show');
   setTimeout(()=>document.getElementById('nameInput').focus(), 100);
 }
+function showNameModalForDaily(){ showNameModal(null, true); }
+
 function saveName(){
   const v = document.getElementById('nameInput').value.trim();
   if(!v){ document.getElementById('nameInput').style.borderColor = 'var(--red)'; return; }
@@ -866,14 +1014,15 @@ function saveName(){
   localStorage.setItem('delf_name', v);
   document.getElementById('nameModal').classList.remove('show');
   renderLevels();
-  if(window._pendingLevel){ startQuiz(window._pendingLevel); window._pendingLevel = null; }
+  if(window._pendingDaily){ startDaily(); window._pendingDaily = null; }
+  else if(window._pendingLevel){ startQuiz(window._pendingLevel); window._pendingLevel = null; }
 }
 document.getElementById('nameInput').addEventListener('keydown', e=>{ if(e.key==='Enter') saveName(); });
 
 function showScreen(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
 
 function startQuiz(level){
-  initAudio();
+  initAudio(); isDailyMode = false;
   currentLevel=level; currentQIndex=0; score=0; correctCount=0; wrongCount=0; currentStreak=0; bestStreak=0; answered=false;
   document.getElementById('levelBadge').textContent='LEVEL '+level+' • '+LEVEL_META[level-1].name.toUpperCase();
   document.getElementById('totalQ').textContent=QUESTIONS[level].length;
@@ -908,10 +1057,7 @@ function loadQuestion(){
 
 function startTimer(){
   clearInterval(timerInterval);
-  if(!timerEnabled){
-    document.getElementById('timer').style.display='none';
-    return;
-  }
+  if(!timerEnabled){ document.getElementById('timer').style.display='none'; return; }
   document.getElementById('timer').style.display='inline-flex';
   timeLeft=TOTAL_TIME; updateTimerDisplay();
   timerInterval=setInterval(()=>{
@@ -958,12 +1104,9 @@ function showResults(){
   
   const prevBest = parseInt(localStorage.getItem('delf_level_'+currentLevel+'_score') || '0');
   localStorage.setItem('delf_level_'+currentLevel+'_score', Math.max(score, prevBest));
-  
-  // XP: 10 per correct + bonus
   const xpGained = score * 10 + (score === total ? 50 : 0) + (bestStreak >= 5 ? 20 : 0);
   addXP(xpGained);
   
-  // History
   try{
     let hist = JSON.parse(localStorage.getItem('delf_history') || '[]');
     hist.unshift({level: currentLevel, score: score, total: total, date: Date.now(), xp: xpGained});
@@ -971,7 +1114,6 @@ function showResults(){
     localStorage.setItem('delf_history', JSON.stringify(hist));
   }catch(e){}
   
-  // Achievements
   if(bestStreak >= 5) unlockAchievement('streak5');
   if(bestStreak >= 10) unlockAchievement('streak10');
   if(score === total && !hintUsed) unlockAchievement('no_hint');
@@ -1021,10 +1163,7 @@ function showLeaderboard(){
     content.innerHTML = '<div class="leaderboard"><div class="lb-empty">No scores yet. Be the first champion! 🏆</div></div>';
   } else {
     content.innerHTML = '<div class="leaderboard"><h4>🏆 Top Players</h4>' + lb.map((e,i)=>`
-      <div class="lb-row">
-        <span class="lb-name">${i+1}. ${escapeHtml(e.name)} <span style="color:var(--muted);font-size:0.75rem;">(L${e.level})</span></span>
-        <span class="lb-score">${e.score}/${e.total}</span>
-      </div>
+      <div class="lb-row"><span class="lb-name">${i+1}. ${escapeHtml(e.name)} <span style="color:var(--muted);font-size:0.75rem;">(L${e.level})</span></span><span class="lb-score">${e.score}/${e.total}</span></div>
     `).join('') + '</div>';
   }
   document.getElementById('lbModal').classList.add('show');
@@ -1032,11 +1171,8 @@ function showLeaderboard(){
 
 function showProfile(){
   const content = document.getElementById('profileContent');
-  const xp = getXP();
-  const completed = getCompletedCount();
-  const rank = getPlayerRank();
-  let totalScore = 0;
-  for(let i=1;i<=TOTAL_LEVELS;i++) totalScore += getLevelScore(i);
+  const xp = getXP(), completed = getCompletedCount(), rank = getPlayerRank();
+  let totalScore = 0; for(let i=1;i<=TOTAL_LEVELS;i++) totalScore += getLevelScore(i);
   content.innerHTML = `
     <div class="profile-grid">
       <div class="profile-stat"><div class="ps-lbl">Player</div><div class="ps-val" style="font-size:1rem;">${escapeHtml(playerName || 'Not set')}</div></div>
@@ -1055,11 +1191,7 @@ function showAchievements(){
   const content = document.getElementById('achContent');
   content.innerHTML = `
     <div class="achievements-grid">
-      ${ACHIEVEMENTS.map(a=>`
-        <div class="ach ${unlocked.includes(a.id)?'unlocked':'locked'}" title="${a.name} — ${a.desc}">
-          ${a.icon}
-        </div>
-      `).join('')}
+      ${ACHIEVEMENTS.map(a=>`<div class="ach ${unlocked.includes(a.id)?'unlocked':'locked'}" title="${a.name} — ${a.desc}">${a.icon}</div>`).join('')}
     </div>
     <p style="text-align:center;font-size:0.8rem;color:var(--muted);">${unlocked.length} / ${ACHIEVEMENTS.length} unlocked</p>
   `;
@@ -1075,19 +1207,13 @@ function showHistory(){
   } else {
     content.innerHTML = '<div class="leaderboard"><h4>📊 Recent Attempts</h4>' + hist.map(h=>{
       const d = new Date(h.date).toLocaleDateString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
-      return `<div class="history-row">
-        <span><strong>Level ${h.level}</strong> <span class="history-date">${d}</span></span>
-        <span class="lb-score">${h.score}/${h.total} • +${h.xp} XP</span>
-      </div>`;
+      return `<div class="history-row"><span><strong>Level ${h.level}</strong> <span class="history-date">${d}</span></span><span class="lb-score">${h.score}/${h.total} • +${h.xp} XP</span></div>`;
     }).join('') + '</div>';
   }
   document.getElementById('histModal').classList.add('show');
 }
 
-function showSettings(){
-  syncToggles();
-  document.getElementById('setModal').classList.add('show');
-}
+function showSettings(){ syncToggles(); document.getElementById('setModal').classList.add('show'); }
 function toggleSetting(type){
   if(type==='sound') toggleSound();
   else if(type==='music') toggleMusic();
@@ -1096,8 +1222,7 @@ function toggleSetting(type){
 }
 function resetAllData(){
   if(!confirm('Are you sure? This will erase all your progress, XP, and achievements.')) return;
-  const keys = Object.keys(localStorage).filter(k=>k.startsWith('delf_'));
-  keys.forEach(k=>localStorage.removeItem(k));
+  Object.keys(localStorage).filter(k=>k.startsWith('delf_')).forEach(k=>localStorage.removeItem(k));
   location.reload();
 }
 
@@ -1116,8 +1241,7 @@ function showCertificate(){
         <p style="color:var(--accent);font-weight:700;margin-top:14px;">Progress: ${completed} / ${TOTAL_LEVELS} levels</p>
       </div>
     `;
-    document.getElementById('certModal').classList.add('show');
-    return;
+    document.getElementById('certModal').classList.add('show'); return;
   }
   const today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   content.innerHTML = `<canvas id="certCanvas" width="1200" height="850" style="width:100%;height:auto;border-radius:12px;display:block;"></canvas>`;
@@ -1126,153 +1250,62 @@ function showCertificate(){
 }
 
 function drawCertificate(name, date){
-  const canvas = document.getElementById('certCanvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = 1200, H = 850;
-
+  const canvas = document.getElementById('certCanvas'); if(!canvas) return;
+  const ctx = canvas.getContext('2d'); const W=1200, H=850;
   const bgGrad = ctx.createLinearGradient(0,0,W,H);
-  bgGrad.addColorStop(0,'#0a0d24');
-  bgGrad.addColorStop(0.5,'#12163a');
-  bgGrad.addColorStop(1,'#0a0d24');
-  ctx.fillStyle = bgGrad;
-  ctx.fillRect(0,0,W,H);
-
+  bgGrad.addColorStop(0,'#0a0d24'); bgGrad.addColorStop(0.5,'#12163a'); bgGrad.addColorStop(1,'#0a0d24');
+  ctx.fillStyle = bgGrad; ctx.fillRect(0,0,W,H);
   ctx.fillStyle = 'rgba(212,175,55,0.04)';
   for(let x=0;x<W;x+=30){ for(let y=0;y<H;y+=30){ ctx.beginPath(); ctx.arc(x,y,1,0,Math.PI*2); ctx.fill(); } }
-
-  ctx.strokeStyle = '#d4af37';
-  ctx.lineWidth = 4;
-  ctx.strokeRect(28,28,W-56,H-56);
-  ctx.strokeStyle = 'rgba(212,175,55,0.5)';
-  ctx.lineWidth = 1.5;
-  ctx.strokeRect(44,44,W-88,H-88);
-
-  const drawCorner = (x,y,flipX,flipY)=>{
-    ctx.save(); ctx.translate(x,y); ctx.scale(flipX,flipY);
-    ctx.strokeStyle = '#d4af37'; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.moveTo(0,40); ctx.lineTo(0,0); ctx.lineTo(40,0); ctx.stroke();
-    ctx.beginPath(); ctx.arc(15,15,6,0,Math.PI*2); ctx.stroke();
-    ctx.restore();
-  };
+  ctx.strokeStyle='#d4af37'; ctx.lineWidth=4; ctx.strokeRect(28,28,W-56,H-56);
+  ctx.strokeStyle='rgba(212,175,55,0.5)'; ctx.lineWidth=1.5; ctx.strokeRect(44,44,W-88,H-88);
+  const drawCorner=(x,y,flipX,flipY)=>{ ctx.save(); ctx.translate(x,y); ctx.scale(flipX,flipY); ctx.strokeStyle='#d4af37'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(0,40); ctx.lineTo(0,0); ctx.lineTo(40,0); ctx.stroke(); ctx.beginPath(); ctx.arc(15,15,6,0,Math.PI*2); ctx.stroke(); ctx.restore(); };
   drawCorner(60,60,1,1); drawCorner(W-60,60,-1,1); drawCorner(60,H-60,1,-1); drawCorner(W-60,H-60,-1,-1);
-
-  ctx.fillStyle = '#d4af37';
-  ctx.font = 'bold 56px "Space Grotesk", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('✦', W/2, 130);
-
-  ctx.fillStyle = '#f0f4ff';
-  ctx.font = 'bold 22px "Space Grotesk", sans-serif';
-  ctx.fillText('DELF ENGLISH INSTITUTE', W/2, 175);
-
-  ctx.fillStyle = '#d4af37';
-  ctx.font = 'bold 14px "Inter", sans-serif';
-  ctx.fillText('INTERNATIONAL ENGLISH PROFICIENCY', W/2, 205);
-
-  ctx.strokeStyle = 'rgba(212,175,55,0.4)';
-  ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(W/2-180, 225); ctx.lineTo(W/2+180, 225); ctx.stroke();
-
-  ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 58px "Cinzel", serif';
-  ctx.fillText('CERTIFICATE', W/2, 300);
-  ctx.fillStyle = '#d4af37';
-  ctx.font = 'bold 22px "Inter", sans-serif';
-  ctx.fillText('OF ACHIEVEMENT', W/2, 335);
-
-  ctx.fillStyle = 'rgba(240,244,255,0.6)';
-  ctx.font = 'italic 18px "Inter", sans-serif';
-  ctx.fillText('This certificate is proudly presented to', W/2, 400);
-
-  const nameGrad = ctx.createLinearGradient(W/2-300, 0, W/2+300, 0);
-  nameGrad.addColorStop(0,'#00e5ff');
-  nameGrad.addColorStop(0.5,'#ffffff');
-  nameGrad.addColorStop(1,'#d4af37');
-  ctx.fillStyle = nameGrad;
-  ctx.font = 'bold 64px "Space Grotesk", sans-serif';
-  ctx.fillText(name || 'Student', W/2, 475);
-
-  ctx.strokeStyle = '#d4af37';
-  ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(W/2-300, 500); ctx.lineTo(W/2+300, 500); ctx.stroke();
-
-  ctx.fillStyle = 'rgba(240,244,255,0.85)';
-  ctx.font = '18px "Inter", sans-serif';
+  ctx.fillStyle='#d4af37'; ctx.font='bold 56px "Space Grotesk", sans-serif'; ctx.textAlign='center'; ctx.fillText('✦', W/2, 130);
+  ctx.fillStyle='#f0f4ff'; ctx.font='bold 22px "Space Grotesk", sans-serif'; ctx.fillText('DELF ENGLISH INSTITUTE', W/2, 175);
+  ctx.fillStyle='#d4af37'; ctx.font='bold 14px "Inter", sans-serif'; ctx.fillText('INTERNATIONAL ENGLISH PROFICIENCY', W/2, 205);
+  ctx.strokeStyle='rgba(212,175,55,0.4)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(W/2-180,225); ctx.lineTo(W/2+180,225); ctx.stroke();
+  ctx.fillStyle='#ffffff'; ctx.font='bold 58px "Cinzel", serif'; ctx.fillText('CERTIFICATE', W/2, 300);
+  ctx.fillStyle='#d4af37'; ctx.font='bold 22px "Inter", sans-serif'; ctx.fillText('OF ACHIEVEMENT', W/2, 335);
+  ctx.fillStyle='rgba(240,244,255,0.6)'; ctx.font='italic 18px "Inter", sans-serif'; ctx.fillText('This certificate is proudly presented to', W/2, 400);
+  const nameGrad = ctx.createLinearGradient(W/2-300,0,W/2+300,0);
+  nameGrad.addColorStop(0,'#00e5ff'); nameGrad.addColorStop(0.5,'#ffffff'); nameGrad.addColorStop(1,'#d4af37');
+  ctx.fillStyle=nameGrad; ctx.font='bold 64px "Space Grotesk", sans-serif'; ctx.fillText(name || 'Student', W/2, 475);
+  ctx.strokeStyle='#d4af37'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(W/2-300,500); ctx.lineTo(W/2+300,500); ctx.stroke();
+  ctx.fillStyle='rgba(240,244,255,0.85)'; ctx.font='18px "Inter", sans-serif';
   ctx.fillText('for successfully completing all 10 levels of the', W/2, 560);
   ctx.fillText('DELF English Challenge with exceptional proficiency', W/2, 588);
   ctx.fillText('in English grammar, vocabulary, and comprehension.', W/2, 616);
-
-  ctx.fillStyle = '#d4af37';
-  ctx.font = 'bold 20px "Space Grotesk", sans-serif';
-  ctx.fillText('LEVEL 10 — MASTERY (CEFR C2)', W/2, 665);
-
-  ctx.fillStyle = 'rgba(240,244,255,0.6)';
-  ctx.font = '13px "Inter", sans-serif';
-  ctx.textAlign = 'left';
-  ctx.fillText('DATE', 180, 740);
-  ctx.fillStyle = '#f0f4ff';
-  ctx.font = 'bold 18px "Inter", sans-serif';
-  ctx.fillText(date, 180, 765);
-  ctx.strokeStyle = 'rgba(212,175,55,0.5)';
-  ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(180, 780); ctx.lineTo(400, 780); ctx.stroke();
-
-  ctx.save();
-  ctx.translate(W/2, 745);
-  ctx.beginPath(); ctx.arc(0,0,55,0,Math.PI*2);
-  ctx.fillStyle = 'rgba(212,175,55,0.15)'; ctx.fill();
-  ctx.strokeStyle = '#d4af37'; ctx.lineWidth = 3; ctx.stroke();
-  ctx.beginPath(); ctx.arc(0,0,42,0,Math.PI*2);
-  ctx.strokeStyle = 'rgba(212,175,55,0.6)'; ctx.lineWidth = 1; ctx.stroke();
-  ctx.fillStyle = '#d4af37';
-  ctx.font = 'bold 34px "Space Grotesk", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('★', 0, 12);
-  ctx.fillStyle = '#d4af37';
-  ctx.font = 'bold 10px "Inter", sans-serif';
-  ctx.fillText('OFFICIAL', 0, -62);
+  ctx.fillStyle='#d4af37'; ctx.font='bold 20px "Space Grotesk", sans-serif'; ctx.fillText('LEVEL 10 — MASTERY (CEFR C2)', W/2, 665);
+  ctx.fillStyle='rgba(240,244,255,0.6)'; ctx.font='13px "Inter", sans-serif'; ctx.textAlign='left'; ctx.fillText('DATE', 180, 740);
+  ctx.fillStyle='#f0f4ff'; ctx.font='bold 18px "Inter", sans-serif'; ctx.fillText(date, 180, 765);
+  ctx.strokeStyle='rgba(212,175,55,0.5)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(180,780); ctx.lineTo(400,780); ctx.stroke();
+  ctx.save(); ctx.translate(W/2, 745);
+  ctx.beginPath(); ctx.arc(0,0,55,0,Math.PI*2); ctx.fillStyle='rgba(212,175,55,0.15)'; ctx.fill(); ctx.strokeStyle='#d4af37'; ctx.lineWidth=3; ctx.stroke();
+  ctx.beginPath(); ctx.arc(0,0,42,0,Math.PI*2); ctx.strokeStyle='rgba(212,175,55,0.6)'; ctx.lineWidth=1; ctx.stroke();
+  ctx.fillStyle='#d4af37'; ctx.font='bold 34px "Space Grotesk", sans-serif'; ctx.textAlign='center'; ctx.fillText('★', 0, 12);
+  ctx.fillStyle='#d4af37'; ctx.font='bold 10px "Inter", sans-serif'; ctx.fillText('OFFICIAL', 0, -62);
   ctx.restore();
-
-  ctx.textAlign = 'right';
-  ctx.fillStyle = 'rgba(240,244,255,0.6)';
-  ctx.font = '13px "Inter", sans-serif';
-  ctx.fillText('SIGNATURE', W-180, 740);
-  ctx.fillStyle = '#f0f4ff';
-  ctx.font = 'italic bold 26px "Cinzel", serif';
-  ctx.fillText('Dr. E. Walker', W-180, 768);
-  ctx.strokeStyle = 'rgba(212,175,55,0.5)';
-  ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(W-400, 780); ctx.lineTo(W-180, 780); ctx.stroke();
-  ctx.fillStyle = 'rgba(240,244,255,0.5)';
-  ctx.font = '11px "Inter", sans-serif';
-  ctx.fillText('Director, DELF English Institute', W-180, 800);
-
-  ctx.strokeStyle = 'rgba(212,175,55,0.3)';
-  ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(W/2-200, 818); ctx.lineTo(W/2+200, 818); ctx.stroke();
+  ctx.textAlign='right'; ctx.fillStyle='rgba(240,244,255,0.6)'; ctx.font='13px "Inter", sans-serif'; ctx.fillText('SIGNATURE', W-180, 740);
+  ctx.fillStyle='#f0f4ff'; ctx.font='italic bold 26px "Cinzel", serif'; ctx.fillText('Dr. E. Walker', W-180, 768);
+  ctx.strokeStyle='rgba(212,175,55,0.5)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(W-400,780); ctx.lineTo(W-180,780); ctx.stroke();
+  ctx.fillStyle='rgba(240,244,255,0.5)'; ctx.font='11px "Inter", sans-serif'; ctx.fillText('Director, DELF English Institute', W-180, 800);
+  ctx.strokeStyle='rgba(212,175,55,0.3)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(W/2-200,818); ctx.lineTo(W/2+200,818); ctx.stroke();
 }
 
 function downloadCertificate(){
-  const canvas = document.getElementById('certCanvas');
-  if(!canvas) return;
+  const canvas = document.getElementById('certCanvas'); if(!canvas) return;
   try{
     const link = document.createElement('a');
     link.download = 'DELF-Certificate-' + (playerName || 'Student').replace(/\s+/g,'-') + '.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+    link.href = canvas.toDataURL('image/png'); link.click();
   }catch(e){ alert('Download failed. Try again.'); }
 }
 
 function shareResult(){
   const text = `I scored ${score}/10 on Level ${currentLevel} of the DELF English Challenge! 🏆 Can you beat me?`;
-  if(navigator.share){
-    navigator.share({title:'DELF English Challenge', text}).catch(()=>{});
-  } else {
-    navigator.clipboard.writeText(text).then(()=>{
-      showToast('✅ Result copied to clipboard');
-    }).catch(()=>{});
-  }
+  if(navigator.share){ navigator.share({title:'DELF English Challenge', text}).catch(()=>{}); }
+  else { navigator.clipboard.writeText(text).then(()=>{ showToast('✅ Result copied'); }).catch(()=>{}); }
 }
 
 function launchConfetti(){
@@ -1280,8 +1313,7 @@ function launchConfetti(){
   for(let i=0;i<100;i++){
     setTimeout(()=>{
       const c=document.createElement('div'); c.className='confetti';
-      c.style.left=Math.random()*100+'vw';
-      c.style.background=colors[Math.floor(Math.random()*colors.length)];
+      c.style.left=Math.random()*100+'vw'; c.style.background=colors[Math.floor(Math.random()*colors.length)];
       const size=Math.random()*8+6; c.style.width=size+'px'; c.style.height=size+'px';
       c.style.borderRadius=Math.random()>0.5?'50%':'2px';
       c.style.animationDuration=(Math.random()*2+2.5)+'s';
@@ -1291,7 +1323,7 @@ function launchConfetti(){
 }
 
 function restartQuiz(){ startQuiz(currentLevel); }
-function goHome(){ clearInterval(timerInterval); showScreen('welcomeScreen'); renderLevels(); }
+function goHome(){ clearInterval(timerInterval); clearInterval(dailyTimerInterval); isDailyMode=false; showScreen('welcomeScreen'); renderLevels(); }
 
 document.addEventListener('keydown', e=>{
   if(!document.getElementById('quizScreen').classList.contains('active')) return;
